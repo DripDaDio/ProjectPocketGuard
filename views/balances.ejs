@@ -1,0 +1,400 @@
+<%- include('partials/_head') %>
+<body class="balances-body">
+<div class="app-container">
+  <aside class="sidebar">
+    <div class="logo">
+      <img src="/img/pocketguard-logo.svg" alt="PocketGuard" class="logo-img">
+    </div>
+    <nav class="nav-menu">
+      <a href="/dashboard" class="nav-item">
+        <span class="material-icons-round">dashboard</span>
+        Overview
+      </a>
+      <a href="/balances" class="nav-item active">
+        <span class="material-icons-round">account_balance_wallet</span>
+        Balances
+      </a>
+      <a href="/transactions" class="nav-item">
+        <span class="material-icons-round">sync_alt</span>
+        Transactions
+      </a>
+      <a href="/bills" class="nav-item">
+        <span class="material-icons-round">receipt_long</span>
+        Bills
+      </a>
+      <a href="/expenses" class="nav-item">
+        <span class="material-icons-round">pie_chart</span>
+        Expenses
+      </a>
+      <a href="/goals" class="nav-item">
+        <span class="material-icons-round">flag</span>
+        Goals
+      </a>
+      <a href="/profile" class="nav-item">
+        <span class="material-icons-round">settings</span>
+        Settings
+      </a>
+      <a href="/buddy" class="nav-item">
+        <span class="material-icons-round">support_agent</span>
+        Pocket Buddy
+      </a>
+    </nav>
+    <button class="nav-item logout-btn">
+      <span class="material-icons-round">logout</span>
+      Logout
+    </button>
+    <div class="user-profile">
+      <div class="avatar">
+        <span class="material-icons-round">account_circle</span>
+      </div>
+      <div class="user-info">
+        <div class="name">Suryansh</div>
+        <div class="role">Choudhary</div>
+        <div class="view-profile">View profile</div>
+      </div>
+      <button class="menu-btn">
+        <span class="material-icons-round">more_vert</span>
+      </button>
+    </div>
+  </aside>
+
+  <main id="main" class="balances-page page-enter" role="main">
+    <div class="page-header">
+      <div class="date-display">
+        <span class="material-icons-round">arrow_forward</span>
+        May 19, 2023
+      </div>
+      <div class="search-bar">
+        <span class="material-icons-round">search</span>
+        <input type="text" placeholder="Search here">
+      </div>
+      <button class="notification-btn">
+        <span class="material-icons-round">notifications</span>
+      </button>
+    </div>
+
+    <section class="balances-section">
+      <div class="section-header">
+        <h1>Balances</h1>
+      </div>
+
+      <div class="accounts-grid">
+        <!-- Credit Card Account -->
+        <div class="account-card">
+          <div class="account-header">
+            <div class="card-logo-wrapper">
+              <div class="card-logo mastercard-logo">
+                <span class="material-icons-round">credit_card</span>
+              </div>
+            </div>
+            <div class="account-type">Credit Card</div>
+          </div>
+          <div class="bank-info">
+            <span class="bank-name">Master Card</span>
+          </div>
+          <div class="account-number">3388 4556 8860 8***</div>
+          <div class="account-label">Account Number</div>
+          <div class="account-balance">$25,000</div>
+          <div class="balance-label">Total amount</div>
+          <div class="account-actions">
+            <button class="btn-remove">Remove</button>
+            <button class="btn-details">
+              Details
+              <span class="material-icons-round">arrow_forward</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Checking Account -->
+        <div class="account-card">
+          <div class="account-header">
+            <div class="card-logo-wrapper">
+              <div class="card-logo visa-logo">
+                <span class="material-icons-round">account_balance</span>
+              </div>
+            </div>
+            <div class="account-type">Checking</div>
+          </div>
+          <div class="bank-info">
+            <span class="bank-name">AB Bank Ltd</span>
+          </div>
+          <div class="account-number">693 456 69 9****</div>
+          <div class="account-label">Account Number</div>
+          <div class="account-balance">$25,000</div>
+          <div class="balance-label">Total amount</div>
+          <div class="account-actions">
+            <button class="btn-remove">Remove</button>
+            <button class="btn-details">
+              Details
+              <span class="material-icons-round">arrow_forward</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Savings Account -->
+        <div class="account-card">
+          <div class="account-header">
+            <div class="card-logo-wrapper">
+              <div class="card-logo savings-logo">
+                <span class="material-icons-round">savings</span>
+              </div>
+            </div>
+            <div class="account-type">Savings</div>
+          </div>
+          <div class="bank-info">
+            <span class="bank-name">Brac Bank Ltd.</span>
+          </div>
+          <div class="account-number">133 456 886 8****</div>
+          <div class="account-label">Account Number</div>
+          <div class="account-balance">$25,000</div>
+          <div class="balance-label">Total amount</div>
+          <div class="account-actions">
+            <button class="btn-remove">Remove</button>
+            <button class="btn-details">
+              Details
+              <span class="material-icons-round">arrow_forward</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Investment Account -->
+        <div class="account-card">
+          <div class="account-header">
+            <div class="card-logo-wrapper">
+              <div class="card-logo investment-logo">
+                <span class="material-icons-round">trending_up</span>
+              </div>
+            </div>
+            <div class="account-type">Investment</div>
+          </div>
+          <div class="bank-info">
+            <span class="bank-name">AB Bank Ltd</span>
+          </div>
+          <div class="account-number">698 456 866 2****</div>
+          <div class="account-label">Account Number</div>
+          <div class="account-balance">$25,000</div>
+          <div class="balance-label">Total amount</div>
+          <div class="account-actions">
+            <button class="btn-remove">Remove</button>
+            <button class="btn-details">
+              Details
+              <span class="material-icons-round">arrow_forward</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Loan Account -->
+        <div class="account-card">
+          <div class="account-header">
+            <div class="card-logo-wrapper">
+              <div class="card-logo loan-logo">
+                <span class="material-icons-round">request_quote</span>
+              </div>
+            </div>
+            <div class="account-type">Loan</div>
+          </div>
+          <div class="bank-info">
+            <span class="bank-name">City Bank Ltd.</span>
+          </div>
+          <div class="account-number">363 456 896 6****</div>
+          <div class="account-label">Account Number</div>
+          <div class="account-balance">$25,000</div>
+          <div class="balance-label">Total amount</div>
+          <div class="account-actions">
+            <button class="btn-remove">Remove</button>
+            <button class="btn-details">
+              Details
+              <span class="material-icons-round">arrow_forward</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Add New Account Card -->
+        <div class="account-card add-account">
+          <div class="add-content">
+            <button class="btn-add-account">
+              <span class="material-icons-round">add</span>
+              Add Accounts
+            </button>
+            <button class="btn-edit-accounts">Edit Accounts</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- Add Account Modal -->
+<div class="modal-overlay" id="addAccountModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Add New Account</h2>
+      <button class="btn-close-modal">
+        <span class="material-icons-round">close</span>
+      </button>
+    </div>
+    <form class="modal-form" id="addAccountForm">
+      <div class="form-group">
+        <label for="bankName">
+          <span class="material-icons-round">account_balance</span>
+          Bank Name
+        </label>
+        <input type="text" id="bankName" name="bankName" placeholder="Enter bank name" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="accountName">
+          <span class="material-icons-round">description</span>
+          Account Name
+        </label>
+        <input type="text" id="accountName" name="accountName" placeholder="e.g., Everyday Checking" required>
+      </div>
+      
+      <div class="form-row">
+        <div class="form-group">
+          <label for="accountType">
+            <span class="material-icons-round">category</span>
+            Account Type
+          </label>
+          <select id="accountType" name="type" required>
+            <option value="">Select type</option>
+            <option value="CHECKING">Checking</option>
+            <option value="SAVINGS">Savings</option>
+            <option value="CREDIT">Credit Card</option>
+            <option value="INVESTMENT">Investment</option>
+            <option value="LOAN">Loan</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="last4">
+            <span class="material-icons-round">tag</span>
+            Last 4 Digits
+          </label>
+          <input type="text" id="last4" name="last4" placeholder="1234" maxlength="4" pattern="[0-9]{4}" required>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="currentBalance">
+          <span class="material-icons-round">account_balance_wallet</span>
+          Current Balance
+        </label>
+        <input type="number" id="currentBalance" name="currentBalance" placeholder="0.00" step="0.01" required>
+      </div>
+      
+      <div class="form-actions">
+        <button type="button" class="btn-secondary btn-randomize">
+          <span class="material-icons-round">shuffle</span>
+          Randomize
+        </button>
+        <button type="submit" class="btn-primary">
+          <span class="material-icons-round">add</span>
+          Add Account
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Account Details Modal -->
+<div class="modal-overlay" id="accountDetailsModal">
+  <div class="modal-content details-modal">
+    <div class="modal-header">
+      <h2>Account Details</h2>
+      <button class="btn-close-details">
+        <span class="material-icons-round">close</span>
+      </button>
+    </div>
+    <div class="details-content">
+      <div class="details-card">
+        <div class="detail-section">
+          <div class="detail-icon">
+            <span class="material-icons-round" id="detailIcon">credit_card</span>
+          </div>
+          <div class="detail-info">
+            <div class="detail-label">Account Type</div>
+            <div class="detail-value" id="detailType">Credit Card</div>
+          </div>
+        </div>
+        
+        <div class="detail-section">
+          <div class="detail-icon">
+            <span class="material-icons-round">account_balance</span>
+          </div>
+          <div class="detail-info">
+            <div class="detail-label">Bank Name</div>
+            <div class="detail-value" id="detailBank">Master Card</div>
+          </div>
+        </div>
+        
+        <div class="detail-section">
+          <div class="detail-icon">
+            <span class="material-icons-round">tag</span>
+          </div>
+          <div class="detail-info">
+            <div class="detail-label">Account Number</div>
+            <div class="detail-value" id="detailNumber">3388 4556 8860 8***</div>
+          </div>
+        </div>
+        
+        <div class="detail-section highlight">
+          <div class="detail-icon">
+            <span class="material-icons-round">account_balance_wallet</span>
+          </div>
+          <div class="detail-info">
+            <div class="detail-label">Current Balance</div>
+            <div class="detail-value large" id="detailBalance">$25,000</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="details-stats">
+        <div class="stat-card">
+          <div class="stat-icon">
+            <span class="material-icons-round">trending_up</span>
+          </div>
+          <div class="stat-info">
+            <div class="stat-label">This Month</div>
+            <div class="stat-value">+$2,450</div>
+          </div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon">
+            <span class="material-icons-round">calendar_today</span>
+          </div>
+          <div class="stat-info">
+            <div class="stat-label">Last Transaction</div>
+            <div class="stat-value">2 days ago</div>
+          </div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon">
+            <span class="material-icons-round">receipt</span>
+          </div>
+          <div class="stat-info">
+            <div class="stat-label">Total Transactions</div>
+            <div class="stat-value">127</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="details-actions">
+        <button class="btn-primary btn-view-transactions">
+          <span class="material-icons-round">list</span>
+          View Transactions
+        </button>
+        <button class="btn-secondary btn-transfer">
+          <span class="material-icons-round">swap_horiz</span>
+          Transfer
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+<script src="/js/balances.js"></script>
+<%- include('partials/_footer') %>

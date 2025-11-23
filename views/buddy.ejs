@@ -1,0 +1,138 @@
+<%- include('partials/_head') %>
+<link rel="stylesheet" href="/css/buddy.css">
+<div class="app-container">
+  <aside class="sidebar">
+    <div class="logo">
+      <img src="/img/pocketguard-logo.svg" alt="PocketGuard" class="logo-img">
+    </div>
+    <nav class="nav-menu">
+      <a href="/dashboard" class="nav-item">
+        <span class="material-icons-round">dashboard</span>
+        Overview
+      </a>
+      <a href="/balances" class="nav-item">
+        <span class="material-icons-round">account_balance_wallet</span>
+        Balances
+      </a>
+      <a href="/transactions" class="nav-item">
+        <span class="material-icons-round">sync_alt</span>
+        Transactions
+      </a>
+      <a href="/bills" class="nav-item">
+        <span class="material-icons-round">receipt_long</span>
+        Bills
+      </a>
+      <a href="/expenses" class="nav-item">
+        <span class="material-icons-round">pie_chart</span>
+        Expenses
+      </a>
+      <a href="/goals" class="nav-item">
+        <span class="material-icons-round">flag</span>
+        Goals
+      </a>
+      <a href="/profile" class="nav-item">
+        <span class="material-icons-round">settings</span>
+        Settings
+      </a>
+      <a href="/buddy" class="nav-item active">
+        <span class="material-icons-round">support_agent</span>
+        Pocket Buddy
+      </a>
+  </nav>
+  <div class="user-profile">
+    <div class="avatar">
+      <span class="material-icons-round">account_circle</span>
+    </div>
+    <div class="user-info">
+      <div class="name">Suryansh Choudhary</div>
+      <div class="role">Member</div>
+    </div>
+    <button class="menu-btn">
+      <span class="material-icons-round">more_vert</span>
+    </button>
+  </div>
+</aside>  <main id="main" class="dashboard buddy-page page-enter" role="main">
+    <div class="page-header">
+      <div class="header-content">
+        <h1>
+          <span class="material-icons-round">support_agent</span>
+          Pocket Buddy
+        </h1>
+        <p class="subtitle">Your AI-powered financial assistant</p>
+      </div>
+      <div class="header-actions">
+        <% if (typeof geminiActive !== 'undefined' && geminiActive) { %>
+          <span class="badge good">
+            <span class="material-icons-round">bolt</span> 
+            AI Active
+          </span>
+        <% } else { %>
+          <span class="badge neutral">
+            <span class="material-icons-round">bolt</span> 
+            Demo Mode
+          </span>
+        <% } %>
+        <button id="buddy-reset" class="btn-secondary">
+          <span class="material-icons-round">refresh</span>
+          New Chat
+        </button>
+      </div>
+    </div>
+
+    <div class="buddy-container">
+      <section class="chat-section card">
+        <div class="chat-header">
+          <div class="chat-title">
+            <div class="ai-avatar">
+              <span class="material-icons-round">smart_toy</span>
+            </div> 
+            <div>
+              <div class="title-text">Finance Buddy</div>
+              <span class="typing-indicator" hidden>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                Typing...
+              </span>
+            </div>
+          </div>
+        </div>
+        <div id="chat-log" class="chat-log">
+          <!-- Chat messages will appear here -->
+        </div>
+        <form id="chat-form" class="chat-input">
+          <input 
+            id="chat-text" 
+            placeholder="Ask about budgets, savings, investments..." 
+            autocomplete="off"
+            maxlength="500"
+            aria-label="Chat message input"
+          />
+          <button type="submit" class="btn-send">
+            <span class="material-icons-round">send</span>
+          </button>
+        </form>
+      </section>
+
+      <aside class="suggestions-section">
+        <h3>Quick Suggestions</h3>
+        <div class="suggestion-cards">
+          <div class="suggestion-card">
+            <span class="material-icons-round">savings</span>
+            <div>How can I save more money?</div>
+          </div>
+          <div class="suggestion-card">
+            <span class="material-icons-round">trending_up</span>
+            <div>What's a good investment strategy?</div>
+          </div>
+          <div class="suggestion-card">
+            <span class="material-icons-round">account_balance_wallet</span>
+            <div>Help me create a budget</div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+</div>
+<script src="/js/buddy.js"></script>
+<%- include('partials/_footer') %>

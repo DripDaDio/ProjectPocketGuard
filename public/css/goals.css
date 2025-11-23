@@ -1,0 +1,311 @@
+/* Goals Page Styling */
+
+body.goals-body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #FFD97D !important;
+  min-height: 100vh;
+}
+
+.goals-page {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+  background: #FFD97D;
+}
+
+/* Section Header */
+.goals-section {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.section-header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+  color: #1a1a1a;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-action {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid #333;
+  color: #333;
+}
+
+.btn-outline:hover {
+  background: #333;
+  color: #fff;
+}
+
+.btn-create {
+  background: #FF6B6B;
+  border: none;
+  color: white;
+}
+
+.btn-create:hover {
+  background: #ff5252;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+}
+
+/* Goals Container */
+.goals-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+/* Goal Cards */
+.goal-card {
+  background: white;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.goal-card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
+}
+
+.goal-header {
+  margin-bottom: 20px;
+}
+
+.goal-header h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+  color: #1a1a1a;
+}
+
+/* Progress Bar */
+.goal-progress-bar {
+  position: relative;
+  height: 32px;
+  background: #f0f0f0;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4A90E2 0%, #67B5FF 100%);
+  border-radius: 16px;
+  transition: width 0.6s ease;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 12px;
+}
+
+.progress-label {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  z-index: 2;
+}
+
+/* Goal Actions */
+.goal-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.btn-goal-action {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid #4A90E2;
+  background: transparent;
+  color: #4A90E2;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-goal-action:hover {
+  background: #4A90E2;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Savings Card */
+.savings-card {
+  background: linear-gradient(135deg, #FFE5B4 0%, #FFDAB9 100%);
+}
+
+.savings-rules {
+  margin: 20px 0;
+}
+
+.rule {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.rule-header {
+  margin-bottom: 8px;
+}
+
+.rule-header strong {
+  font-size: 16px;
+  color: #1a1a1a;
+}
+
+.rule p {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.rule-status {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #4A90E2;
+}
+
+.btn-create-sprint {
+  width: 100%;
+  padding: 12px;
+  background: #FF6B6B;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 12px;
+}
+
+.btn-create-sprint:hover {
+  background: #ff5252;
+  transform: translateY(-2px);
+}
+
+.ai-badge {
+  margin-top: 16px;
+  text-align: center;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Investing Card */
+.investing-card {
+  background: linear-gradient(135deg, #E8F4F8 0%, #D6EAF8 100%);
+}
+
+.investing-info {
+  margin: 20px 0;
+}
+
+.investing-info p {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.investing-info strong {
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.investing-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .goals-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .action-buttons {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .btn-action {
+    flex: 1;
+    min-width: 120px;
+  }
+
+  .goal-actions,
+  .investing-actions {
+    flex-direction: column;
+  }
+
+  .btn-goal-action {
+    width: 100%;
+  }
+}

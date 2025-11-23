@@ -1,0 +1,372 @@
+<%- include('partials/_head') %>
+<div class="app-container">
+  <aside class="sidebar">
+    <div class="logo">
+      <img src="/img/pocketguard-logo.svg" alt="PocketGuard" class="logo-img">
+    </div>
+    <nav class="nav-menu">
+      <a href="/dashboard" class="nav-item active">
+        <span class="material-icons-round">dashboard</span>
+        Overview
+      </a>
+      <a href="/balances" class="nav-item">
+        <span class="material-icons-round">account_balance_wallet</span>
+        Balances
+      </a>
+      <a href="/transactions" class="nav-item">
+        <span class="material-icons-round">sync_alt</span>
+        Transactions
+      </a>
+      <a href="/bills" class="nav-item">
+        <span class="material-icons-round">receipt_long</span>
+        Bills
+      </a>
+      <a href="/expenses" class="nav-item">
+        <span class="material-icons-round">pie_chart</span>
+        Expenses
+      </a>
+      <a href="/goals" class="nav-item">
+        <span class="material-icons-round">flag</span>
+        Goals
+      </a>
+      <a href="/profile" class="nav-item">
+        <span class="material-icons-round">settings</span>
+        Settings
+      </a>
+      <a href="/buddy" class="nav-item">
+        <span class="material-icons-round">support_agent</span>
+        Pocket Buddy
+      </a>
+    </nav>
+    <div class="user-profile">
+      <div class="avatar">
+        <span class="avatar-letter">S</span>
+      </div>
+      <div class="user-info">
+        <div class="name">Suryansh</div>
+        <div class="role">Choudhary</div>
+      </div>
+      <button class="menu-btn">
+        <span class="material-icons-round">more_vert</span>
+      </button>
+    </div>
+  </aside>
+
+  <main id="main" class="dashboard page-enter" role="main">
+    <div class="top-row">
+      <section class="balance-section card">
+        <div class="section-header">
+          <h2>Total Balance</h2>
+          <span class="badge good">All Accounts</span>
+        </div>
+        
+        <!-- Card Slider -->
+        <div class="card-slider">
+          <!-- Card 1 - Mastercard -->
+          <div class="card-slide active" data-card="0">
+            <div class="balance-amount">$240,399</div>
+            <div class="card-info">
+              <div class="card-type-row">
+                <span class="material-icons-round card-icon">credit_card</span>
+                <div class="card-type">Mastercard</div>
+              </div>
+              <div class="card-number">**** **** **** 2598</div>
+              <div class="card-bottom-row">
+                <div class="card-holder">John Doe</div>
+                <div class="card-brand">
+                  <svg width="40" height="24" viewBox="0 0 48 32" fill="none">
+                    <circle cx="16" cy="16" r="12" fill="#EB001B"/>
+                    <circle cx="32" cy="16" r="12" fill="#F79E1B"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 - Visa -->
+          <div class="card-slide" data-card="1">
+            <div class="balance-amount">$125,750</div>
+            <div class="card-info">
+              <div class="card-type-row">
+                <span class="material-icons-round card-icon">account_balance</span>
+                <div class="card-type">Visa Card</div>
+              </div>
+              <div class="card-number">**** **** **** 8834</div>
+              <div class="card-bottom-row">
+                <div class="card-holder">John Doe</div>
+                <div class="card-brand">
+                  <svg width="40" height="14" viewBox="0 0 48 16" fill="white">
+                    <text x="0" y="12" font-family="Arial" font-weight="bold" font-size="12">VISA</text>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 - American Express -->
+          <div class="card-slide" data-card="2">
+            <div class="balance-amount">$89,450</div>
+            <div class="card-info">
+              <div class="card-type-row">
+                <span class="material-icons-round card-icon">payment</span>
+                <div class="card-type">Amex Card</div>
+              </div>
+              <div class="card-number">**** ****** *1005</div>
+              <div class="card-bottom-row">
+                <div class="card-holder">John Doe</div>
+                <div class="card-brand">
+                  <svg width="40" height="14" viewBox="0 0 48 16" fill="white">
+                    <text x="0" y="12" font-family="Arial" font-weight="bold" font-size="10">AMEX</text>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card-nav">
+          <button class="nav-dot active" data-card="0"></button>
+          <button class="nav-dot" data-card="1"></button>
+          <button class="nav-dot" data-card="2"></button>
+        </div>
+      </section>
+
+      <section class="goals-section card">
+        <div class="section-header">
+          <h2>Goals</h2>
+          <span class="period">May, 2023</span>
+        </div>
+        <div class="goal-amount">$20,000</div>
+        <div class="goal-progress">
+          <div class="target-achieved">Target Achieved</div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 62.5%"></div>
+          </div>
+          <div class="progress-labels">
+            <span>$0</span>
+            <span>12k</span>
+            <span>$20k</span>
+          </div>
+          <div class="target-info">
+            <span>This month Target</span>
+            <span class="amount">$20,000</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="bills-section card">
+        <div class="section-header">
+          <h2>Upcoming Bill</h2>
+          <a href="/bills" class="view-all">View All</a>
+        </div>
+        <div class="bill-list">
+          <div class="bill-item">
+            <div class="bill-icon">
+              <div class="bill-logo figma-logo">
+                <span class="material-icons-round">design_services</span>
+              </div>
+            </div>
+            <div class="bill-info-wrapper">
+              <div class="bill-info">
+                <div class="bill-name">Figma - Monthly</div>
+                <div class="bill-meta">
+                  <span class="material-icons-round">schedule</span>
+                  Last Charge - 14 May, 2023
+                </div>
+              </div>
+              <div class="bill-right">
+                <div class="bill-amount">$150</div>
+                <div class="bill-date">
+                  <span class="material-icons-round">calendar_today</span>
+                  May 15
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bill-item">
+            <div class="bill-icon">
+              <div class="bill-logo adobe-logo">
+                <span class="material-icons-round">photo_library</span>
+              </div>
+            </div>
+            <div class="bill-info-wrapper">
+              <div class="bill-info">
+                <div class="bill-name">Adobe - Yearly</div>
+                <div class="bill-meta">
+                  <span class="material-icons-round">schedule</span>
+                  Last Charge - 17 Jun, 2023
+                </div>
+              </div>
+              <div class="bill-right">
+                <div class="bill-amount">$559</div>
+                <div class="bill-date">
+                  <span class="material-icons-round">calendar_today</span>
+                  Jun 16
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="bottom-row">
+      <section class="transactions-section card">
+        <div class="section-header">
+          <h2>Recent Transaction</h2>
+          <a href="#" class="view-all">View All</a>
+        </div>
+        <div class="transaction-tabs">
+          <button class="tab active">All</button>
+          <button class="tab">Revenue</button>
+          <button class="tab">Expenses</button>
+        </div>
+        <div class="transaction-list">
+          <div class="transaction-item">
+            <div class="tx-icon car">
+              <span class="material-icons-round">directions_car</span>
+            </div>
+            <div class="tx-info">
+              <div class="tx-name">GTR 5</div>
+              <div class="tx-date">17 May 2023</div>
+            </div>
+            <div class="tx-amount">$160.00</div>
+          </div>
+          <div class="transaction-item">
+            <div class="tx-icon shopping">
+              <span class="material-icons-round">shopping_bag</span>
+            </div>
+            <div class="tx-info">
+              <div class="tx-name">Polo Shirt</div>
+              <div class="tx-date">17 May 2023</div>
+            </div>
+            <div class="tx-amount">$20.00</div>
+          </div>
+          <div class="transaction-item">
+            <div class="tx-icon food">
+              <span class="material-icons-round">restaurant</span>
+            </div>
+            <div class="tx-info">
+              <div class="tx-name">Biriyani</div>
+              <div class="tx-date">17 May 2023</div>
+            </div>
+            <div class="tx-amount">$10.00</div>
+          </div>
+          <div class="transaction-item">
+            <div class="tx-icon transport">
+              <span class="material-icons-round">local_taxi</span>
+            </div>
+            <div class="tx-info">
+              <div class="tx-name">Taxi Fare</div>
+              <div class="tx-date">17 May 2023</div>
+            </div>
+            <div class="tx-amount">$12.00</div>
+          </div>
+          <div class="transaction-item">
+            <div class="tx-icon tech">
+              <span class="material-icons-round">keyboard</span>
+            </div>
+            <div class="tx-info">
+              <div class="tx-name">Keyboard</div>
+              <div class="tx-date">17 May 2023</div>
+            </div>
+            <div class="tx-amount">$22.00</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="statistics-section card">
+        <div class="section-header">
+          <h2>Statistics</h2>
+          <div class="stats-toggle">
+            <button class="stats-btn active" data-period="weekly">Weekly</button>
+            <button class="stats-btn" data-period="monthly">Monthly</button>
+          </div>
+        </div>
+        <div class="chart-container">
+          <canvas id="statsChart"></canvas>
+        </div>
+        <div class="chart-legend">
+          <div class="legend-item">
+            <span class="legend-color this-period"></span>
+            <span class="legend-label">This week</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-color last-period"></span>
+            <span class="legend-label">Last week</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="expenses-section card">
+        <div class="section-header">
+          <h2>Expenses Breakdown</h2>
+          <span class="compare-text">*Compare to last month</span>
+        </div>
+        <div class="expenses-grid">
+          <div class="expense-item">
+            <div class="expense-icon housing">
+              <span class="material-icons-round">home</span>
+            </div>
+            <div class="expense-details">
+              <div class="expense-name">Housing</div>
+              <div class="expense-amount">$250.00</div>
+              <div class="expense-change increase">15%</div>
+            </div>
+          </div>
+          <div class="expense-item">
+            <div class="expense-icon food">
+              <span class="material-icons-round">restaurant</span>
+            </div>
+            <div class="expense-details">
+              <div class="expense-name">Food</div>
+              <div class="expense-amount">$350.00</div>
+              <div class="expense-change decrease">0.8%</div>
+            </div>
+          </div>
+          <div class="expense-item">
+            <div class="expense-icon transport">
+              <span class="material-icons-round">directions_car</span>
+            </div>
+            <div class="expense-details">
+              <div class="expense-name">Transportation</div>
+              <div class="expense-amount">$50.00</div>
+              <div class="expense-change decrease">12%</div>
+            </div>
+          </div>
+          <div class="expense-item">
+            <div class="expense-icon entertainment">
+              <span class="material-icons-round">movie</span>
+            </div>
+            <div class="expense-details">
+              <div class="expense-name">Entertainment</div>
+              <div class="expense-amount">$80.00</div>
+              <div class="expense-change decrease">15%</div>
+            </div>
+          </div>
+          <div class="expense-item">
+            <div class="expense-icon shopping">
+              <span class="material-icons-round">shopping_cart</span>
+            </div>
+            <div class="expense-details">
+              <div class="expense-name">Shopping</div>
+              <div class="expense-amount">$420.00</div>
+              <div class="expense-change increase">20%</div>
+            </div>
+          </div>
+          <div class="expense-item">
+            <div class="expense-icon others">
+              <span class="material-icons-round">more_horiz</span>
+            </div>
+            <div class="expense-details">
+              <div class="expense-name">Others</div>
+              <div class="expense-amount">$650.00</div>
+              <div class="expense-change increase">23%</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>
+<script src="/js/dashboard-new.js"></script>
+<%- include('partials/_footer') %>

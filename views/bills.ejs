@@ -1,0 +1,214 @@
+<%- include('partials/_head') %>
+<body class="bills-body">
+<div class="app-container">
+  <aside class="sidebar">
+    <div class="logo">
+      <img src="/img/pocketguard-logo.svg" alt="PocketGuard" class="logo-img">
+    </div>
+    <nav class="nav-menu">
+      <a href="/dashboard" class="nav-item">
+        <span class="material-icons-round">dashboard</span>
+        Overview
+      </a>
+      <a href="/balances" class="nav-item">
+        <span class="material-icons-round">account_balance_wallet</span>
+        Balances
+      </a>
+      <a href="/transactions" class="nav-item">
+        <span class="material-icons-round">sync_alt</span>
+        Transactions
+      </a>
+      <a href="/bills" class="nav-item active">
+        <span class="material-icons-round">receipt_long</span>
+        Bills
+      </a>
+      <a href="/expenses" class="nav-item">
+        <span class="material-icons-round">pie_chart</span>
+        Expenses
+      </a>
+      <a href="/goals" class="nav-item">
+        <span class="material-icons-round">flag</span>
+        Goals
+      </a>
+      <a href="/profile" class="nav-item">
+        <span class="material-icons-round">settings</span>
+        Settings
+      </a>
+      <a href="/buddy" class="nav-item">
+        <span class="material-icons-round">support_agent</span>
+        Pocket Buddy
+      </a>
+    </nav>
+    <button class="nav-item logout-btn">
+      <span class="material-icons-round">logout</span>
+      Logout
+    </button>
+    <div class="user-profile">
+      <div class="avatar">
+        <span class="material-icons-round">account_circle</span>
+      </div>
+      <div class="user-info">
+        <div class="name">Suryansh</div>
+        <div class="role">Choudhary</div>
+        <div class="view-profile">View profile</div>
+      </div>
+      <button class="menu-btn">
+        <span class="material-icons-round">more_vert</span>
+      </button>
+    </div>
+  </aside>
+
+  <main id="main" class="bills-page page-enter" role="main">
+    <div class="page-header">
+      <div class="date-display">
+        <span class="material-icons-round">arrow_forward</span>
+        May 19, 2023
+      </div>
+      <div class="header-actions">
+        <div class="search-bar">
+          <span class="material-icons-round">search</span>
+          <input type="text" placeholder="Search here">
+        </div>
+        <button class="notification-btn">
+          <span class="material-icons-round">notifications</span>
+        </button>
+      </div>
+    </div>
+
+    <section class="bills-section">
+      <div class="section-header">
+        <h1>Billings</h1>
+        <div class="action-buttons">
+          <button class="btn-action btn-add">
+            <span class="material-icons-round">add</span>
+            Add
+          </button>
+          <button class="btn-action">
+            <span class="material-icons-round">file_download</span>
+            Download PDF Report
+          </button>
+        </div>
+      </div>
+
+      <div class="search-filter-bar">
+        <div class="search-input">
+          <span class="material-icons-round">search</span>
+          <input type="text" placeholder="Search by invoice number, name, amount...">
+        </div>
+        <button class="btn-filter">
+          <span class="material-icons-round">filter_alt</span>
+          Filter
+        </button>
+      </div>
+
+      <div class="bills-table-container">
+        <table class="bills-table">
+          <thead>
+            <tr>
+              <th><input type="checkbox" class="select-all"></th>
+              <th>INVOICE NUMBER</th>
+              <th>VENDOR</th>
+              <th>BILLING DATE <span class="material-icons-round">arrow_drop_down</span></th>
+              <th>STATUS</th>
+              <th>AMOUNT</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="bill-row">
+              <td><input type="checkbox"></td>
+              <td class="invoice-number">514684654B465</td>
+              <td class="vendor">Jane Cooper</td>
+              <td class="date">2/19/21</td>
+              <td><span class="badge badge-paid">Paid</span></td>
+              <td class="amount">$500.00</td>
+              <td>
+                <button class="btn-pay btn-pay-disabled">Pay</button>
+              </td>
+            </tr>
+            <tr class="bill-row">
+              <td><input type="checkbox"></td>
+              <td class="invoice-number">5467319467348</td>
+              <td class="vendor">Wade Warren</td>
+              <td class="date">5/7/16</td>
+              <td><span class="badge badge-paid">Paid</span></td>
+              <td class="amount">$500.00</td>
+              <td>
+                <button class="btn-pay btn-pay-disabled">Pay</button>
+              </td>
+            </tr>
+            <tr class="bill-row">
+              <td><input type="checkbox"></td>
+              <td class="invoice-number">134570594S446</td>
+              <td class="vendor">Esther Howard</td>
+              <td class="date">9/18/16</td>
+              <td><span class="badge badge-unpaid">Unpaid</span></td>
+              <td class="amount">$500.00</td>
+              <td>
+                <button class="btn-pay">Pay</button>
+              </td>
+            </tr>
+            <tr class="bill-row">
+              <td><input type="checkbox"></td>
+              <td class="invoice-number">5440754979...</td>
+              <td class="vendor">Cameron Williamson</td>
+              <td class="date">2/11/12</td>
+              <td><span class="badge badge-paid">Paid</span></td>
+              <td class="amount">$500.00</td>
+              <td>
+                <button class="btn-pay btn-pay-disabled">Pay</button>
+              </td>
+            </tr>
+            <tr class="bill-row">
+              <td><input type="checkbox"></td>
+              <td class="invoice-number">12434679B4543</td>
+              <td class="vendor">Brooklyn Simmons</td>
+              <td class="date">9/18/16</td>
+              <td><span class="badge badge-unpaid">Unpaid</span></td>
+              <td class="amount">$500.00</td>
+              <td>
+                <button class="btn-pay">Pay</button>
+              </td>
+            </tr>
+            <tr class="bill-row">
+              <td><input type="checkbox"></td>
+              <td class="invoice-number">84541346497Q7</td>
+              <td class="vendor">Leslie Alexander</td>
+              <td class="date">1/28/17</td>
+              <td><span class="badge badge-unpaid">Unpaid</span></td>
+              <td class="amount">$500.00</td>
+              <td>
+                <button class="btn-pay">Pay</button>
+              </td>
+            </tr>
+            <tr class="bill-row">
+              <td><input type="checkbox"></td>
+              <td class="invoice-number">2130164Q4Q451</td>
+              <td class="vendor">Jenny Wilson</td>
+              <td class="date">5/27/15</td>
+              <td><span class="badge badge-paid">Paid</span></td>
+              <td class="amount">$500.00</td>
+              <td>
+                <button class="btn-pay btn-pay-disabled">Pay</button>
+              </td>
+            </tr>
+            <tr class="bill-row">
+              <td><input type="checkbox"></td>
+              <td class="invoice-number">Q439104645404</td>
+              <td class="vendor">Guy Hawkins</td>
+              <td class="date">8/2/19</td>
+              <td><span class="badge badge-paid">Paid</span></td>
+              <td class="amount">$500.00</td>
+              <td>
+                <button class="btn-pay">Pay</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</div>
+</body>
+<script src="/js/bills.js"></script>
+<%- include('partials/_footer') %>

@@ -1,0 +1,207 @@
+<%- include('partials/_head') %>
+<link rel="stylesheet" href="/css/expenses.css">
+<body class="expenses-body">
+<div class="app-container">
+  <aside class="sidebar">
+    <div class="logo">
+      <img src="/img/pocketguard-logo.svg" alt="PocketGuard" class="logo-img">
+    </div>
+    <nav class="nav-menu">
+      <a href="/dashboard" class="nav-item">
+        <span class="material-icons-round">dashboard</span>
+        Overview
+      </a>
+      <a href="/balances" class="nav-item">
+        <span class="material-icons-round">account_balance_wallet</span>
+        Balances
+      </a>
+      <a href="/transactions" class="nav-item">
+        <span class="material-icons-round">sync_alt</span>
+        Transactions
+      </a>
+      <a href="/bills" class="nav-item">
+        <span class="material-icons-round">receipt_long</span>
+        Bills
+      </a>
+      <a href="/expenses" class="nav-item active">
+        <span class="material-icons-round">pie_chart</span>
+        Expenses
+      </a>
+      <a href="/goals" class="nav-item">
+        <span class="material-icons-round">flag</span>
+        Goals
+      </a>
+      <a href="/profile" class="nav-item">
+        <span class="material-icons-round">settings</span>
+        Settings
+      </a>
+      <a href="/buddy" class="nav-item">
+        <span class="material-icons-round">support_agent</span>
+        Pocket Buddy
+      </a>
+    </nav>
+    <button class="nav-item logout-btn">
+      <span class="material-icons-round">logout</span>
+      Logout
+    </button>
+    <div class="user-profile">
+      <div class="avatar">
+        <span class="avatar-letter">S</span>
+      </div>
+      <div class="user-info">
+        <div class="name">Suryansh</div>
+        <div class="role">Choudhary</div>
+      </div>
+      <button class="menu-btn">
+        <span class="material-icons-round">more_vert</span>
+      </button>
+    </div>
+  </aside>
+
+  <main class="expenses-page page-enter" role="main">
+    <!-- Page Header -->
+    <div class="page-header">
+      <div class="header-left">
+        <h1 class="page-title">Expenses Overview</h1>
+        <p class="page-subtitle">Track and manage your spending</p>
+      </div>
+      <div class="header-actions">
+        <button class="btn-filter">
+          <span class="material-icons-round">filter_list</span>
+          Filter
+        </button>
+        <button class="btn-export">
+          <span class="material-icons-round">download</span>
+          Export
+        </button>
+      </div>
+    </div>
+
+    <!-- Summary Cards -->
+    <div class="summary-row">
+      <div class="summary-card total">
+        <div class="summary-icon">
+          <span class="material-icons-round">account_balance_wallet</span>
+        </div>
+        <div class="summary-info">
+          <div class="summary-label">Total Expenses</div>
+          <div class="summary-amount">$<%= totalExpenses.toFixed(2) %></div>
+          <div class="summary-change">This Month</div>
+        </div>
+      </div>
+
+      <div class="summary-card current">
+        <div class="summary-icon">
+          <span class="material-icons-round">trending_up</span>
+        </div>
+        <div class="summary-info">
+          <div class="summary-label">This Month</div>
+          <div class="summary-amount">$<%= thisMonth.toFixed(2) %></div>
+          <div class="summary-change increase">+<%= ((thisMonth - lastMonth) / lastMonth * 100).toFixed(1) %>% vs last month</div>
+        </div>
+      </div>
+
+      <div class="summary-card previous">
+        <div class="summary-icon">
+          <span class="material-icons-round">history</span>
+        </div>
+        <div class="summary-info">
+          <div class="summary-label">Last Month</div>
+          <div class="summary-amount">$<%= lastMonth.toFixed(2) %></div>
+          <div class="summary-change">Previous Period</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Expense Categories -->
+    <section class="card categories-card">
+      <div class="card-header">
+        <h2 class="card-title">Expense Categories</h2>
+        <div class="period-selector">
+          <button class="period-btn active">This Month</button>
+          <button class="period-btn">Last Month</button>
+          <button class="period-btn">Last 3 Months</button>
+        </div>
+      </div>
+
+      <div class="categories-grid">
+        <% Object.entries(categories).forEach(([key, cat]) => { %>
+          <% if (cat.total > 0) { %>
+            <div class="category-item" style="--category-color: <%= cat.color %>">
+              <div class="category-icon">
+                <span class="material-icons-round"><%= cat.icon %></span>
+              </div>
+              <div class="category-info">
+                <div class="category-name"><%= cat.name %></div>
+                <div class="category-count"><%= cat.count %> transactions</div>
+              </div>
+              <div class="category-amount">
+                <div class="amount-value">$<%= cat.total.toFixed(2) %></div>
+                <div class="amount-percentage"><%= ((cat.total / totalExpenses) * 100).toFixed(1) %>%</div>
+              </div>
+            </div>
+          <% } %>
+        <% }); %>
+      </div>
+    </section>
+
+    <!-- Recent Expenses -->
+    <section class="card expenses-list-card">
+      <div class="card-header">
+        <h2 class="card-title">Recent Expenses</h2>
+        <a href="/transactions" class="view-all-link">
+          View All <span class="material-icons-round">arrow_forward</span>
+        </a>
+      </div>
+
+      <div class="expenses-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Description</th>
+              <th>Category</th>
+              <th>Date</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% transactions.forEach(tx => { %>
+              <tr class="expense-row">
+                <td>
+                  <div class="expense-desc">
+                    <span class="material-icons-round expense-icon">receipt</span>
+                    <span><%= tx.description || 'Expense' %></span>
+                  </div>
+                </td>
+                <td>
+                  <span class="category-badge">
+                    <%= tx.category || 'General' %>
+                  </span>
+                </td>
+                <td class="date-cell">
+                  <%= new Date(tx.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) %>
+                </td>
+                <td class="amount-cell">
+                  $<%= Math.abs(tx.amount).toFixed(2) %>
+                </td>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table>
+
+        <% if (transactions.length === 0) { %>
+          <div class="empty-state">
+            <div class="empty-icon">
+              <span class="material-icons-round">receipt_long</span>
+            </div>
+            <p class="empty-text">No expenses found</p>
+            <p class="empty-subtext">Your expense transactions will appear here</p>
+          </div>
+        <% } %>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script src="/js/expenses.js"></script>
+<%- include('partials/_footer') %>

@@ -1,0 +1,240 @@
+<%- include('partials/_head') %>
+<link rel="stylesheet" href="/css/profile.css">
+<body class="profile-body">
+<div class="app-container">
+  <aside class="sidebar">
+    <div class="logo">
+      <img src="/img/pocketguard-logo.svg" alt="PocketGuard" class="logo-img">
+    </div>
+    <nav class="nav-menu">
+      <a href="/dashboard" class="nav-item">
+        <span class="material-icons-round">dashboard</span>
+        Overview
+      </a>
+      <a href="/balances" class="nav-item">
+        <span class="material-icons-round">account_balance_wallet</span>
+        Balances
+      </a>
+      <a href="/transactions" class="nav-item">
+        <span class="material-icons-round">sync_alt</span>
+        Transactions
+      </a>
+      <a href="/bills" class="nav-item">
+        <span class="material-icons-round">receipt_long</span>
+        Bills
+      </a>
+      <a href="/expenses" class="nav-item">
+        <span class="material-icons-round">pie_chart</span>
+        Expenses
+      </a>
+      <a href="/goals" class="nav-item">
+        <span class="material-icons-round">flag</span>
+        Goals
+      </a>
+      <a href="/profile" class="nav-item active">
+        <span class="material-icons-round">settings</span>
+        Settings
+      </a>
+      <a href="/buddy" class="nav-item">
+        <span class="material-icons-round">support_agent</span>
+        Pocket Buddy
+      </a>
+    </nav>
+    <button class="nav-item logout-btn">
+      <span class="material-icons-round">logout</span>
+      Logout
+    </button>
+    <div class="user-profile">
+      <div class="avatar">
+        <span class="avatar-letter">S</span>
+      </div>
+      <div class="user-info">
+        <div class="name">Suryansh</div>
+        <div class="role">Choudhary</div>
+      </div>
+      <button class="menu-btn">
+        <span class="material-icons-round">more_vert</span>
+      </button>
+    </div>
+  </aside>
+
+  <main class="profile-page page-enter" role="main">
+    <div class="page-header">
+      <h1 class="page-title">Profile & Settings</h1>
+      <div class="header-actions">
+        <span class="status-badge"><span class="material-icons-round">verified_user</span> Signed in</span>
+      </div>
+    </div>
+
+    <% if (typeof error !== 'undefined' && error) { %><div class="alert alert-error"><%= error %></div><% } %>
+    <% if (typeof success !== 'undefined' && success) { %><div class="alert alert-success"><%= success %></div><% } %>
+
+    <div class="profile-grid">
+      <!-- User Profile Card -->
+      <section class="card profile-card">
+        <div class="card-header">
+          <div class="user-avatar-large"><%= (user && user.name) ? user.name[0].toUpperCase() : 'U' %></div>
+          <div class="user-details">
+            <h3><%= (user && user.name) ? user.name : '—' %></h3>
+            <p class="email"><%= user ? user.email : '—' %></p>
+          </div>
+        </div>
+        <div class="user-badges">
+          <span class="chip"><span class="material-icons-round">calendar_today</span> Member</span>
+          <span class="chip"><span class="material-icons-round">notifications</span> Alerts <%= user && user.notifyWeekly ? 'On' : 'Off' %></span>
+        </div>
+      </section>
+
+      <!-- Linked Accounts Card -->
+      <section class="card accounts-card">
+        <div class="card-title-row">
+          <h2 class="card-title">Linked Accounts</h2>
+          <a class="btn btn-primary-small" href="/accounts/new">
+            <span class="material-icons-round">add</span> Link Account
+          </a>
+        </div>
+        <% if ((accounts || []).length) { %>
+          <ul class="accounts-list">
+            <% accounts.forEach(a => { %>
+              <li class="account-item">
+                <div class="account-info">
+                  <div class="account-name"><strong><%= a.bankName %></strong> — <%= a.accountName %></div>
+                  <div class="account-meta">
+                    <span class="account-type"><%= a.type %></span>
+                    <span class="account-number"><%= a.last4 ? '•••• ' + a.last4 : '' %></span>
+                  </div>
+                </div>
+                <form method="post" action="/accounts/<%= a.id %>/delete" onsubmit="return confirm('Delete this account? This will also remove its transactions.');">
+                  <button class="btn-delete" type="submit" aria-label="Delete <%= a.accountName %>">
+                    <span class="material-icons-round">delete</span>
+                  </button>
+                </form>
+              </li>
+            <% }) %>
+          </ul>
+        <% } else { %>
+          <div class="empty-state">
+            <div class="empty-icon">
+              <span class="material-icons-round">account_balance</span>
+            </div>
+            <p>No linked accounts yet</p>
+          </div>
+        <% } %>
+      </section>
+    </div>
+
+    <!-- Notifications Card -->
+    <section class="card notifications-card">
+      <h2 class="card-title">Notification Preferences</h2>
+      <form method="post" action="/profile/preferences">
+        <div class="toggle-list">
+          <div class="toggle-item">
+            <div class="toggle-label">
+              <span class="material-icons-round">warning</span>
+              <span>Budget Overspend Alerts</span>
+            </div>
+            <label class="switch">
+              <input name="notifyOverspend" type="checkbox" <%= user && user.notifyOverspend ? 'checked' : '' %> />
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="toggle-item">
+            <div class="toggle-label">
+              <span class="material-icons-round">receipt_long</span>
+              <span>Upcoming Bill Reminders</span>
+            </div>
+            <label class="switch">
+              <input name="notifyBills" type="checkbox" <%= user && user.notifyBills ? 'checked' : '' %> />
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="toggle-item">
+            <div class="toggle-label">
+              <span class="material-icons-round">insights</span>
+              <span>Weekly Spending Summary</span>
+            </div>
+            <label class="switch">
+              <input name="notifyWeekly" type="checkbox" <%= user && user.notifyWeekly ? 'checked' : '' %> />
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="toggle-item">
+            <div class="toggle-label">
+              <span class="material-icons-round">flag</span>
+              <span>Goal Progress Updates</span>
+            </div>
+            <label class="switch">
+              <input name="notifyGoals" type="checkbox" <%= user && user.notifyGoals ? 'checked' : '' %> />
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+        <button class="btn btn-primary" type="submit">
+          <span class="material-icons-round">save</span>
+          Save Preferences
+        </button>
+      </form>
+    </section>
+
+    <!-- Security Card -->
+    <section class="card security-card">
+      <div class="card-title-row">
+        <h2 class="card-title">Security</h2>
+        <a class="btn btn-secondary-small" href="/forgot">Change Password</a>
+      </div>
+      <div class="toggle-list">
+        <div class="toggle-item">
+          <div class="toggle-label">
+            <span class="material-icons-round">fingerprint</span>
+            <span>Biometric Authentication</span>
+          </div>
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+          </label>
+        </div>
+        <div class="toggle-item">
+          <div class="toggle-label">
+            <span class="material-icons-round">lock</span>
+            <span>PIN Protection</span>
+          </div>
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- Data Management Card -->
+    <section class="card data-card">
+      <h2 class="card-title">Data Management</h2>
+      <div class="action-buttons">
+        <a class="btn btn-secondary" href="/export/transactions.csv">
+          <span class="material-icons-round">download</span>
+          Export Transactions (CSV)
+        </a>
+        <form method="post" action="/profile/delete" onsubmit="return confirm('Permanently delete your account? This cannot be undone.');" style="display: inline;">
+          <button class="btn btn-danger" type="submit">
+            <span class="material-icons-round">delete_forever</span>
+            Delete My Account
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Legal Card -->
+    <section class="card legal-card">
+      <h2 class="card-title">Legal</h2>
+      <div class="legal-links">
+        <a href="#">Privacy Policy</a>
+        <span class="separator">•</span>
+        <a href="#">Terms of Service</a>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script src="/js/profile.js"></script>
+<%- include('partials/_footer') %>
+<%- include('partials/_footer') %>

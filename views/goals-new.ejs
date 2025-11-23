@@ -1,0 +1,174 @@
+<%- include('partials/_head') %>
+<body class="goals-body">
+<div class="app-container">
+  <aside class="sidebar">
+    <div class="logo">
+      <img src="/img/pocketguard-logo.svg" alt="PocketGuard" class="logo-img">
+    </div>
+    <nav class="nav-menu">
+      <a href="/dashboard" class="nav-item">
+        <span class="material-icons-round">dashboard</span>
+        Overview
+      </a>
+      <a href="/balances" class="nav-item">
+        <span class="material-icons-round">account_balance_wallet</span>
+        Balances
+      </a>
+      <a href="/transactions" class="nav-item">
+        <span class="material-icons-round">sync_alt</span>
+        Transactions
+      </a>
+      <a href="/bills" class="nav-item">
+        <span class="material-icons-round">receipt_long</span>
+        Bills
+      </a>
+      <a href="/expenses" class="nav-item">
+        <span class="material-icons-round">pie_chart</span>
+        Expenses
+      </a>
+      <a href="/goals" class="nav-item active">
+        <span class="material-icons-round">flag</span>
+        Goals
+      </a>
+      <a href="/profile" class="nav-item">
+        <span class="material-icons-round">settings</span>
+        Settings
+      </a>
+      <a href="/buddy" class="nav-item">
+        <span class="material-icons-round">support_agent</span>
+        Pocket Buddy
+      </a>
+    </nav>
+    <button class="nav-item logout-btn">
+      <span class="material-icons-round">logout</span>
+      Logout
+    </button>
+    <div class="user-profile">
+      <div class="avatar">
+        <span class="material-icons-round">account_circle</span>
+      </div>
+      <div class="user-info">
+        <div class="name">Suryansh</div>
+        <div class="role">Choudhary</div>
+        <div class="view-profile">View profile</div>
+      </div>
+      <button class="menu-btn">
+        <span class="material-icons-round">more_vert</span>
+      </button>
+    </div>
+  </aside>
+
+  <main id="main" class="goals-page page-enter" role="main">
+    <div class="page-header">
+      <div class="date-display">
+        <span class="material-icons-round">arrow_forward</span>
+        May 19, 2023
+      </div>
+      <div class="header-actions">
+        <div class="search-bar">
+          <span class="material-icons-round">search</span>
+          <input type="text" placeholder="Search here">
+        </div>
+        <button class="notification-btn">
+          <span class="material-icons-round">notifications</span>
+        </button>
+      </div>
+    </div>
+
+    <section class="goals-section">
+      <div class="section-header">
+        <h1>My Goals</h1>
+        <div class="action-buttons">
+          <button class="btn-action btn-outline">Goal Name</button>
+          <button class="btn-action btn-outline">Target Amount</button>
+          <button class="btn-action btn-create">
+            <span class="material-icons-round">add</span>
+            Create Goal
+          </button>
+        </div>
+      </div>
+
+      <div class="goals-container">
+        <!-- Emergency Fund Goal -->
+        <div class="goal-card">
+          <div class="goal-header">
+            <h3>Emergency Fund</h3>
+          </div>
+          <div class="goal-progress-bar">
+            <div class="progress-fill" style="width: 22%"></div>
+            <span class="progress-label">22%</span>
+          </div>
+          <div class="goal-actions">
+            <button class="btn-goal-action">Funds Amount</button>
+            <button class="btn-goal-action">Add Funds</button>
+          </div>
+        </div>
+
+        <!-- New Laptop Goal -->
+        <div class="goal-card">
+          <div class="goal-header">
+            <h3>New Laptop</h3>
+          </div>
+          <div class="goal-progress-bar">
+            <div class="progress-fill" style="width: 60%"></div>
+            <span class="progress-label">60%</span>
+          </div>
+          <div class="goal-actions">
+            <button class="btn-goal-action">Funds Amount</button>
+            <button class="btn-goal-action">Add Funds</button>
+          </div>
+        </div>
+
+        <!-- Automated Savings Sprints -->
+        <div class="goal-card savings-card">
+          <div class="goal-header">
+            <h3>Automated Savings Sprints</h3>
+          </div>
+          <div class="savings-rules">
+            <div class="rule">
+              <div class="rule-header">
+                <strong>Guilty Pleasure Rule</strong>
+              </div>
+              <p>Every time I buy coffee, transfer $1 to "Vacation".</p>
+              <div class="rule-status">
+                <label class="checkbox-label">
+                  <input type="checkbox" checked>
+                  <span>Enabled</span>
+                </label>
+              </div>
+            </div>
+            <div class="rule">
+              <div class="rule-header">
+                <strong>Steps Streak</strong>
+              </div>
+              <p>If I walk 10k steps, save $2 to "Emergency Fund".</p>
+              <div class="rule-status">
+                <label class="checkbox-label">
+                  <input type="checkbox" checked>
+                  <span>Enabled</span>
+                </label>
+              </div>
+            </div>
+        </div>
+        <button class="btn-create-sprint">Create New Sprint</button>
+      </div>        <!-- Spare Change Investing -->
+        <div class="goal-card investing-card">
+          <div class="goal-header">
+            <h3>Spare Change Investing</h3>
+          </div>
+          <div class="investing-info">
+            <p><strong>Round-Ups ON.</strong> You've Invested ₹24.18 This Month!</p>
+            <p><strong>AI Buddy Reports:</strong> Your Spare Change Portfolio Grew By 5% This Quarter!</p>
+          </div>
+          <div class="investing-actions">
+            <button class="btn-goal-action">Manage Investment</button>
+            <button class="btn-goal-action">Learn More</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+</body>
+<script src="/js/goals.js"></script>
+<%- include('partials/_footer') %>

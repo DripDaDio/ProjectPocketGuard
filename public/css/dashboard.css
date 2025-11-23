@@ -1,0 +1,218 @@
+/* Dashboard Specific Styles */
+.balance-overview {
+  text-align: center;
+  padding: 24px;
+}
+
+.balance-overview .amount {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 16px 0;
+}
+
+.goals {
+  padding: 24px;
+}
+
+.goals .amount {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 16px 0;
+}
+
+.goals .progress {
+  margin-top: 24px;
+}
+
+.goals .bar {
+  width: 100%;
+  height: 12px;
+  background: #f0f0f0;
+  border-radius: 999px;
+  margin: 12px 0;
+  overflow: hidden;
+}
+
+.goals .fill {
+  height: 100%;
+  background: linear-gradient(90deg, #FFB74D, #FF7043);
+}
+
+.goals .goal-stats {
+  display: flex;
+  justify-content: space-between;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.goals .target-line {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.transaction-tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.tab {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.tab.active {
+  background: #FF7043;
+  color: white;
+  border-color: #FF7043;
+}
+
+.transaction-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.transaction-item:last-child {
+  border-bottom: none;
+}
+
+.tx-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 112, 67, 0.1);
+  color: #FF7043;
+}
+
+.tx-details {
+  flex: 1;
+}
+
+.tx-name {
+  font-weight: 500;
+}
+
+.tx-date {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.tx-amount {
+  font-weight: 600;
+}
+
+.statistics {
+  padding: 24px;
+}
+
+.stats-period {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: white;
+}
+
+.chart {
+  margin: 24px 0;
+  height: 300px;
+}
+
+.stats-legend {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.stats-legend span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #666;
+}
+
+.stats-legend span::before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+.stats-legend .this-week::before {
+  background: #4CAF50;
+}
+
+.stats-legend .last-week::before {
+  background: #2196F3;
+}
+
+.expenses-breakdown {
+  padding: 24px;
+}
+
+.expense-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.expense-item {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid #eee;
+  border-radius: 12px;
+}
+
+.category-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 112, 67, 0.1);
+  color: #FF7043;
+}
+
+.category-details {
+  flex: 1;
+}
+
+.category-name {
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.category-amount {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.category-change {
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.category-change.up {
+  color: #4CAF50;
+}
+
+.category-change.down {
+  color: #F44336;
+}
+
+.compare {
+  color: #666;
+  font-size: 0.9rem;
+}

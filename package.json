@@ -1,0 +1,66 @@
+{
+  "name": "pocket-guard",
+  "version": "0.2.0",
+  "private": true,
+  "description": "PocketGuard - AI-powered personal finance management application with smart expense tracking, budgeting, and financial insights",
+  "main": "server.js",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "prisma:generate": "prisma generate",
+    "db:push": "prisma db push",
+    "db:seed": "node prisma/seed.js",
+    "db:reset": "node regenerate-data.js",
+    "css:build": "sass src/scss:public/css --no-source-map",
+    "css:watch": "sass --watch src/scss:public/css --no-source-map",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "finance",
+    "budgeting",
+    "expense-tracker",
+    "ai",
+    "gemini",
+    "personal-finance",
+    "express",
+    "ejs",
+    "prisma",
+    "sqlite",
+    "nodejs"
+  ],
+  "author": "PocketGuard Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/pocket-guard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/pocket-guard/issues"
+  },
+  "homepage": "https://github.com/yourusername/pocket-guard#readme",
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "@prisma/client": "^5.19.1",
+    "bcryptjs": "^3.0.2",
+    "dayjs": "^1.11.13",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-rate-limit": "^8.2.0",
+    "express-session": "^1.17.3",
+    "helmet": "^8.1.0",
+    "json2csv": "^5.0.7",
+    "morgan": "^1.10.0",
+    "node-fetch": "^2.6.12",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4",
+    "prisma": "^5.19.1",
+    "sass": "^1.77.6"
+  }
+}

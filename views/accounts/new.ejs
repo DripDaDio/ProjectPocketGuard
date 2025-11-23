@@ -1,0 +1,496 @@
+<%- include('../partials/_head') %>
+<style>
+  body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+  }
+  
+  .add-account-wrapper {
+    max-width: 650px;
+    margin: 60px auto;
+    padding: 24px;
+  }
+  
+  .page-header {
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+  }
+  
+  .page-header h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .page-header p {
+    font-size: 1rem;
+    opacity: 0.9;
+  }
+  
+  .form-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  }
+  
+  .form-section {
+    margin-bottom: 32px;
+  }
+  
+  .form-section-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .form-section-title svg {
+    width: 20px;
+    height: 20px;
+    fill: #667eea;
+  }
+  
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .form-grid.single {
+    grid-template-columns: 1fr;
+  }
+  
+  .input-group {
+    position: relative;
+  }
+  
+  .input-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 8px;
+  }
+  
+  .input-group input,
+  .input-group select {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+  }
+  
+  .input-group input:focus,
+  .input-group select:focus {
+    outline: none;
+    border-color: #667eea;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+  }
+  
+  .input-group select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 40px;
+  }
+  
+  .toggle-section {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+  }
+  
+  .toggle-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .toggle-row:last-child {
+    margin-bottom: 0;
+  }
+  
+  .toggle-label {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .toggle-label-text {
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .toggle-label-desc {
+    font-size: 0.85rem;
+    color: #666;
+  }
+  
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 52px;
+    height: 28px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.3s;
+    border-radius: 28px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.3s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(24px);
+  }
+  
+  .randomize-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  .randomize-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(245, 87, 108, 0.4);
+  }
+  
+  .randomize-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(245, 87, 108, 0.3);
+  }
+  
+  .randomize-btn svg {
+    width: 18px;
+    height: 18px;
+    fill: white;
+  }
+  
+  .button-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 32px;
+  }
+  
+  .submit-btn {
+    padding: 16px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+  }
+  
+  .submit-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 12px rgba(102, 126, 234, 0.3);
+  }
+  
+  .cancel-btn {
+    padding: 16px;
+    background: white;
+    color: #667eea;
+    border: 2px solid #667eea;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .cancel-btn:hover {
+    background: #f8f9fa;
+    transform: translateY(-2px);
+  }
+  
+  .cancel-btn:active {
+    transform: translateY(0);
+    background: #e8e9ea;
+  }
+  
+  .alert-error {
+    background: #ff4444;
+    color: white;
+    padding: 16px 20px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .alert-error svg {
+    width: 20px;
+    height: 20px;
+    fill: white;
+    flex-shrink: 0;
+  }
+  
+  .account-type-badges {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  
+  .type-badge {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+  }
+  
+  .type-badge.active {
+    border-color: #667eea;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  }
+  
+  .type-badge:hover {
+    border-color: #667eea;
+  }
+  
+  .type-badge-icon {
+    font-size: 1.5rem;
+    margin-bottom: 4px;
+  }
+  
+  .type-badge-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #333;
+  }
+</style>
+<%- include('../partials/_header') %>
+
+<div class="add-account-wrapper">
+  <div class="page-header">
+    <h1>Add Bank Account</h1>
+    <p>Enter your account details to connect manually</p>
+  </div>
+  
+  <% if (typeof error !== 'undefined' && error) { %>
+    <div class="alert-error">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+      <%= error %>
+    </div>
+  <% } %>
+  
+  <div class="form-card">
+    <form method="post" action="/accounts" id="accountForm">
+      <!-- Account Type Selection -->
+      <div class="form-section">
+        <div class="form-section-title">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
+          Account Type
+        </div>
+        <div class="account-type-badges">
+          <div class="type-badge active" data-type="CHECKING">
+            <div class="type-badge-icon">🏦</div>
+            <div class="type-badge-label">Checking</div>
+          </div>
+          <div class="type-badge" data-type="SAVINGS">
+            <div class="type-badge-icon">💰</div>
+            <div class="type-badge-label">Savings</div>
+          </div>
+          <div class="type-badge" data-type="CREDIT">
+            <div class="type-badge-icon">💳</div>
+            <div class="type-badge-label">Credit Card</div>
+          </div>
+        </div>
+        <select name="type" id="accountType" style="display: none;">
+          <option value="CHECKING" selected>Checking</option>
+          <option value="SAVINGS">Savings</option>
+          <option value="CREDIT">Credit Card</option>
+        </select>
+      </div>
+      
+      <!-- Account Details -->
+      <div class="form-section">
+        <div class="form-section-title">
+          <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+          Account Information
+        </div>
+        <div class="form-grid">
+          <div class="input-group">
+            <label for="bankName">Bank Name</label>
+            <input type="text" name="bankName" id="bankName" placeholder="e.g., Chase" value="Mock Bank" required>
+          </div>
+          <div class="input-group">
+            <label for="accountName">Account Name</label>
+            <input type="text" name="accountName" id="accountName" placeholder="e.g., Main Checking" value="Everyday Checking" required>
+          </div>
+          <div class="input-group">
+            <label for="last4">Last 4 Digits</label>
+            <input type="text" name="last4" id="last4" maxlength="4" placeholder="1234" value="1234" required>
+          </div>
+          <div class="input-group">
+            <label for="currentBalance">Current Balance ($)</label>
+            <input type="number" name="currentBalance" id="currentBalance" step="0.01" placeholder="0.00" value="2500" required>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Options -->
+      <div class="toggle-section">
+        <div class="toggle-row">
+          <div class="toggle-label">
+            <span class="toggle-label-text">Generate Sample Transactions</span>
+            <span class="toggle-label-desc">Add realistic demo transactions for testing</span>
+          </div>
+          <label class="switch">
+            <input type="checkbox" name="generateTx" checked />
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+      
+      <!-- Quick Fill Button -->
+      <button type="button" class="randomize-btn" id="randomize">
+        <svg viewBox="0 0 24 24"><path d="M19.07 4.93l-1.41 1.41C19.1 7.79 20 9.79 20 12c0 4.42-3.58 8-8 8s-8-3.58-8-8c0-4.08 3.05-7.44 7-7.93v2.02C8.16 6.57 6 9.03 6 12c0 3.31 2.69 6 6 6s6-2.69 6-6c0-1.66-.67-3.16-1.76-4.24l-1.41 1.41C15.55 9.89 16 10.9 16 12c0 2.21-1.79 4-4 4s-4-1.79-4-4c0-1.86 1.28-3.41 3-3.86v2.14c-.6.35-1 .98-1 1.72 0 1.1.9 2 2 2s2-.9 2-2c0-.74-.4-1.38-1-1.72V2h-1C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10c0-2.76-1.12-5.26-2.93-7.07z"/></svg>
+        Generate Random Details
+      </button>
+      
+      <!-- Submit Buttons -->
+      <div class="button-group">
+        <button type="submit" class="submit-btn">Link Account</button>
+        <a href="/profile" class="cancel-btn">Cancel</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  // Account type badge selection
+  const typeBadges = document.querySelectorAll('.type-badge');
+  const typeSelect = document.getElementById('accountType');
+  
+  typeBadges.forEach(badge => {
+    badge.addEventListener('click', () => {
+      typeBadges.forEach(b => b.classList.remove('active'));
+      badge.classList.add('active');
+      typeSelect.value = badge.dataset.type;
+    });
+  });
+  
+  // Randomize button
+  document.getElementById('randomize').addEventListener('click', () => {
+    const banks = ['Chase Bank', 'Bank of America', 'Wells Fargo', 'Citibank', 'US Bank', 'Capital One', 'PNC Bank', 'TD Bank'];
+    const checkingNames = ['Main Checking', 'Everyday Account', 'Primary Checking', 'Student Checking'];
+    const savingsNames = ['Emergency Fund', 'Vacation Savings', 'High-Yield Savings', 'Rainy Day Fund'];
+    const creditNames = ['Rewards Card', 'Cashback Card', 'Travel Card', 'Premium Card'];
+    
+    const pick = a => a[Math.floor(Math.random() * a.length)];
+    const types = ['CHECKING', 'SAVINGS', 'CREDIT'];
+    const type = pick(types);
+    
+    // Update type badges and select
+    typeBadges.forEach(badge => {
+      badge.classList.remove('active');
+      if (badge.dataset.type === type) {
+        badge.classList.add('active');
+      }
+    });
+    typeSelect.value = type;
+    
+    // Fill in details
+    document.getElementById('bankName').value = pick(banks);
+    
+    let accountName;
+    if (type === 'CHECKING') accountName = pick(checkingNames);
+    else if (type === 'SAVINGS') accountName = pick(savingsNames);
+    else accountName = pick(creditNames);
+    document.getElementById('accountName').value = accountName;
+    
+    document.getElementById('last4').value = String(Math.floor(1000 + Math.random() * 9000));
+    
+    const balance = type === 'CREDIT' 
+      ? -(Math.random() * 2000).toFixed(2) 
+      : (Math.random() * 10000).toFixed(2);
+    document.getElementById('currentBalance').value = balance;
+    
+    // Add a little animation
+    const form = document.getElementById('accountForm');
+    form.style.animation = 'none';
+    setTimeout(() => {
+      form.style.animation = 'pulse 0.3s ease';
+    }, 10);
+  });
+</script>
+
+<style>
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(0.98); }
+  }
+</style>
+
+<%- include('../partials/_footer') %>
