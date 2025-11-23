@@ -144,14 +144,14 @@ app.get('/export/bills-report.pdf', requireAuth, async (req, res, next) => {
   try {
     // Get bills data from database or use demo data
     const bills = [
-      { invoice: '#00745', issueDate: 'Dec 30, 2022', dueDate: 'Dec 25, 2022', amount: '$2,000.00', status: 'Paid' },
-      { invoice: '#00746', issueDate: 'Dec 30, 2022', dueDate: 'Dec 25, 2022', amount: '$1,800.00', status: 'Paid' },
-      { invoice: '#00747', issueDate: 'Dec 30, 2022', dueDate: 'Dec 25, 2022', amount: '$3,200.00', status: 'Unpaid' },
-      { invoice: '#00748', issueDate: 'Dec 30, 2022', dueDate: 'Dec 25, 2022', amount: '$1,500.00', status: 'Paid' },
-      { invoice: '#00749', issueDate: 'Dec 30, 2022', dueDate: 'Dec 25, 2022', amount: '$2,500.00', status: 'Unpaid' },
-      { invoice: '#00750', issueDate: 'Dec 30, 2022', dueDate: 'Dec 25, 2022', amount: '$4,000.00', status: 'Paid' },
-      { invoice: '#00751', issueDate: 'Dec 30, 2022', dueDate: 'Dec 25, 2022', amount: '$1,200.00', status: 'Unpaid' },
-      { invoice: '#00752', issueDate: 'Dec 30, 2022', dueDate: 'Dec 25, 2022', amount: '$3,500.00', status: 'Paid' }
+      { invoice: '#00745', issueDate: 'Dec 30, 2022', dueDate: 'Dec 25, 2022', amount: '₹1,66,000', status: 'Paid' },
+      { invoice: '#00746', issueDate: 'Dec 30, 2022', dueDate: 'Dec 25, 2022', amount: '₹1,49,400', status: 'Paid' },
+      { invoice: '#00747', issueDate: 'Dec 30, 2022', dueDate: 'Dec 25, 2022', amount: '₹2,65,600', status: 'Unpaid' },
+      { invoice: '#00748', issueDate: 'Dec 30, 2022', dueDate: 'Dec 25, 2022', amount: '₹1,24,500', status: 'Paid' },
+      { invoice: '#00749', issueDate: 'Dec 30, 2022', dueDate: 'Dec 25, 2022', amount: '₹2,07,500', status: 'Unpaid' },
+      { invoice: '#00750', issueDate: 'Dec 30, 2022', dueDate: 'Dec 25, 2022', amount: '₹3,32,000', status: 'Paid' },
+      { invoice: '#00751', issueDate: 'Dec 30, 2022', dueDate: 'Dec 25, 2022', amount: '₹99,600', status: 'Unpaid' },
+      { invoice: '#00752', issueDate: 'Dec 30, 2022', dueDate: 'Dec 25, 2022', amount: '₹2,90,500', status: 'Paid' }
     ];
     
     // Generate report content

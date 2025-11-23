@@ -29,13 +29,13 @@
         <span class="material-icons-round">flag</span>
         Goals
       </a>
+      <a href="/buddy" class="nav-item">
+        <span class="material-icons-round">smart_toy</span>
+        Pocket Buddy
+      </a>
       <a href="/profile" class="nav-item">
         <span class="material-icons-round">settings</span>
         Settings
-      </a>
-      <a href="/buddy" class="nav-item">
-        <span class="material-icons-round">support_agent</span>
-        Pocket Buddy
       </a>
     </nav>
     <div class="user-profile">
@@ -64,7 +64,7 @@
         <div class="card-slider">
           <!-- Card 1 - Mastercard -->
           <div class="card-slide active" data-card="0">
-            <div class="balance-amount">$240,399</div>
+            <div class="balance-amount">₹1,99,53,117</div>
             <div class="card-info">
               <div class="card-type-row">
                 <span class="material-icons-round card-icon">credit_card</span>
@@ -85,7 +85,7 @@
 
           <!-- Card 2 - Visa -->
           <div class="card-slide" data-card="1">
-            <div class="balance-amount">$125,750</div>
+            <div class="balance-amount">₹1,04,37,250</div>
             <div class="card-info">
               <div class="card-type-row">
                 <span class="material-icons-round card-icon">account_balance</span>
@@ -105,7 +105,7 @@
 
           <!-- Card 3 - American Express -->
           <div class="card-slide" data-card="2">
-            <div class="balance-amount">$89,450</div>
+            <div class="balance-amount">₹74,24,350</div>
             <div class="card-info">
               <div class="card-type-row">
                 <span class="material-icons-round card-icon">payment</span>
@@ -125,9 +125,17 @@
         </div>
         
         <div class="card-nav">
-          <button class="nav-dot active" data-card="0"></button>
-          <button class="nav-dot" data-card="1"></button>
-          <button class="nav-dot" data-card="2"></button>
+          <button class="nav-arrow prev-card" aria-label="Previous card">
+            <span class="material-icons-round">chevron_left</span>
+          </button>
+          <div class="nav-dots">
+            <button class="nav-dot active" data-card="0"></button>
+            <button class="nav-dot" data-card="1"></button>
+            <button class="nav-dot" data-card="2"></button>
+          </div>
+          <button class="nav-arrow next-card" aria-label="Next card">
+            <span class="material-icons-round">chevron_right</span>
+          </button>
         </div>
       </section>
 
@@ -136,20 +144,20 @@
           <h2>Goals</h2>
           <span class="period">May, 2023</span>
         </div>
-        <div class="goal-amount">$20,000</div>
+        <div class="goal-amount">₹16,60,000</div>
         <div class="goal-progress">
           <div class="target-achieved">Target Achieved</div>
           <div class="progress-bar">
             <div class="progress-fill" style="width: 62.5%"></div>
           </div>
           <div class="progress-labels">
-            <span>$0</span>
-            <span>12k</span>
-            <span>$20k</span>
+            <span>₹0</span>
+            <span>10L</span>
+            <span>₹16.6L</span>
           </div>
           <div class="target-info">
             <span>This month Target</span>
-            <span class="amount">$20,000</span>
+            <span class="amount">₹16,60,000</span>
           </div>
         </div>
       </section>
@@ -175,7 +183,7 @@
                 </div>
               </div>
               <div class="bill-right">
-                <div class="bill-amount">$150</div>
+                <div class="bill-amount">₹12,450</div>
                 <div class="bill-date">
                   <span class="material-icons-round">calendar_today</span>
                   May 15
@@ -198,7 +206,7 @@
                 </div>
               </div>
               <div class="bill-right">
-                <div class="bill-amount">$559</div>
+                <div class="bill-amount">₹46,397</div>
                 <div class="bill-date">
                   <span class="material-icons-round">calendar_today</span>
                   Jun 16
@@ -222,54 +230,119 @@
         </div>
         <div class="transaction-list">
           <div class="transaction-item">
-            <div class="tx-icon car">
-              <span class="material-icons-round">directions_car</span>
+            <div class="bill-icon">
+              <div class="bill-logo" style="background: linear-gradient(135deg, #FFC107 0%, #FFB300 100%);">
+                <span class="material-icons-round">directions_car</span>
+              </div>
             </div>
-            <div class="tx-info">
-              <div class="tx-name">GTR 5</div>
-              <div class="tx-date">17 May 2023</div>
+            <div class="bill-info-wrapper">
+              <div class="bill-info">
+                <div class="bill-name">GTR 5</div>
+                <div class="bill-meta">
+                  <span class="material-icons-round">schedule</span>
+                  Last Transaction
+                </div>
+              </div>
+              <div class="bill-right">
+                <div class="bill-amount">₹13,280</div>
+                <div class="bill-date">
+                  <span class="material-icons-round">calendar_today</span>
+                  17 May 2023
+                </div>
+              </div>
             </div>
-            <div class="tx-amount">$160.00</div>
           </div>
           <div class="transaction-item">
-            <div class="tx-icon shopping">
-              <span class="material-icons-round">shopping_bag</span>
+            <div class="bill-icon">
+              <div class="bill-logo" style="background: linear-gradient(135deg, #9C27B0 0%, #7B1FA2 100%);">
+                <span class="material-icons-round">shopping_bag</span>
+              </div>
             </div>
-            <div class="tx-info">
-              <div class="tx-name">Polo Shirt</div>
-              <div class="tx-date">17 May 2023</div>
+            <div class="bill-info-wrapper">
+              <div class="bill-info">
+                <div class="bill-name">Polo Shirt</div>
+                <div class="bill-meta">
+                  <span class="material-icons-round">schedule</span>
+                  Last Transaction
+                </div>
+              </div>
+              <div class="bill-right">
+                <div class="bill-amount">₹1,660</div>
+                <div class="bill-date">
+                  <span class="material-icons-round">calendar_today</span>
+                  17 May 2023
+                </div>
+              </div>
             </div>
-            <div class="tx-amount">$20.00</div>
           </div>
           <div class="transaction-item">
-            <div class="tx-icon food">
-              <span class="material-icons-round">restaurant</span>
+            <div class="bill-icon">
+              <div class="bill-logo" style="background: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%);">
+                <span class="material-icons-round">restaurant</span>
+              </div>
             </div>
-            <div class="tx-info">
-              <div class="tx-name">Biriyani</div>
-              <div class="tx-date">17 May 2023</div>
+            <div class="bill-info-wrapper">
+              <div class="bill-info">
+                <div class="bill-name">Biriyani</div>
+                <div class="bill-meta">
+                  <span class="material-icons-round">schedule</span>
+                  Last Transaction
+                </div>
+              </div>
+              <div class="bill-right">
+                <div class="bill-amount">₹830</div>
+                <div class="bill-date">
+                  <span class="material-icons-round">calendar_today</span>
+                  17 May 2023
+                </div>
+              </div>
             </div>
-            <div class="tx-amount">$10.00</div>
           </div>
           <div class="transaction-item">
-            <div class="tx-icon transport">
-              <span class="material-icons-round">local_taxi</span>
+            <div class="bill-icon">
+              <div class="bill-logo" style="background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);">
+                <span class="material-icons-round">local_taxi</span>
+              </div>
             </div>
-            <div class="tx-info">
-              <div class="tx-name">Taxi Fare</div>
-              <div class="tx-date">17 May 2023</div>
+            <div class="bill-info-wrapper">
+              <div class="bill-info">
+                <div class="bill-name">Taxi Fare</div>
+                <div class="bill-meta">
+                  <span class="material-icons-round">schedule</span>
+                  Last Transaction
+                </div>
+              </div>
+              <div class="bill-right">
+                <div class="bill-amount">₹996</div>
+                <div class="bill-date">
+                  <span class="material-icons-round">calendar_today</span>
+                  17 May 2023
+                </div>
+              </div>
             </div>
-            <div class="tx-amount">$12.00</div>
           </div>
           <div class="transaction-item">
-            <div class="tx-icon tech">
-              <span class="material-icons-round">keyboard</span>
+            <div class="bill-icon">
+              <div class="bill-logo" style="background: linear-gradient(135deg, #607D8B 0%, #455A64 100%);">
+                <span class="material-icons-round">keyboard</span>
+              </div>
             </div>
-            <div class="tx-info">
-              <div class="tx-name">Keyboard</div>
-              <div class="tx-date">17 May 2023</div>
+            <div class="bill-info-wrapper">
+              <div class="bill-info">
+                <div class="bill-name">Keyboard</div>
+                <div class="bill-meta">
+                  <span class="material-icons-round">schedule</span>
+                  Last Transaction
+                </div>
+              </div>
+              <div class="bill-right">
+                <div class="bill-amount">₹1,826</div>
+                <div class="bill-date">
+                  <span class="material-icons-round">calendar_today</span>
+                  17 May 2023
+                </div>
+              </div>
             </div>
-            <div class="tx-amount">$22.00</div>
           </div>
         </div>
       </section>
@@ -295,6 +368,26 @@
             <span class="legend-label">Last week</span>
           </div>
         </div>
+        <div class="stats-summary">
+          <div class="summary-item">
+            <div class="summary-icon">
+              <span class="material-icons-round">trending_up</span>
+            </div>
+            <div class="summary-info">
+              <div class="summary-label">Avg Daily Spend</div>
+              <div class="summary-value">₹10,583</div>
+            </div>
+          </div>
+          <div class="summary-item">
+            <div class="summary-icon">
+              <span class="material-icons-round">account_balance_wallet</span>
+            </div>
+            <div class="summary-info">
+              <div class="summary-label">Total This Week</div>
+              <div class="summary-value">₹74,078</div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section class="expenses-section card">
@@ -304,63 +397,141 @@
         </div>
         <div class="expenses-grid">
           <div class="expense-item">
-            <div class="expense-icon housing">
-              <span class="material-icons-round">home</span>
+            <div class="bill-icon">
+              <div class="bill-logo" style="background: linear-gradient(135deg, #FF6B6B 0%, #EE5A5A 100%);">
+                <span class="material-icons-round">home</span>
+              </div>
             </div>
-            <div class="expense-details">
-              <div class="expense-name">Housing</div>
-              <div class="expense-amount">$250.00</div>
-              <div class="expense-change increase">15%</div>
-            </div>
-          </div>
-          <div class="expense-item">
-            <div class="expense-icon food">
-              <span class="material-icons-round">restaurant</span>
-            </div>
-            <div class="expense-details">
-              <div class="expense-name">Food</div>
-              <div class="expense-amount">$350.00</div>
-              <div class="expense-change decrease">0.8%</div>
-            </div>
-          </div>
-          <div class="expense-item">
-            <div class="expense-icon transport">
-              <span class="material-icons-round">directions_car</span>
-            </div>
-            <div class="expense-details">
-              <div class="expense-name">Transportation</div>
-              <div class="expense-amount">$50.00</div>
-              <div class="expense-change decrease">12%</div>
+            <div class="bill-info-wrapper">
+              <div class="bill-info">
+                <div class="bill-name">Housing</div>
+                <div class="bill-meta">
+                  <span class="material-icons-round">trending_up</span>
+                  15% increase
+                </div>
+              </div>
+              <div class="bill-right">
+                <div class="bill-amount">₹20,750</div>
+                <div class="bill-date">
+                  <span class="material-icons-round">compare_arrows</span>
+                  vs Last Month
+                </div>
+              </div>
             </div>
           </div>
           <div class="expense-item">
-            <div class="expense-icon entertainment">
-              <span class="material-icons-round">movie</span>
+            <div class="bill-icon">
+              <div class="bill-logo" style="background: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%);">
+                <span class="material-icons-round">restaurant</span>
+              </div>
             </div>
-            <div class="expense-details">
-              <div class="expense-name">Entertainment</div>
-              <div class="expense-amount">$80.00</div>
-              <div class="expense-change decrease">15%</div>
+            <div class="bill-info-wrapper">
+              <div class="bill-info">
+                <div class="bill-name">Food</div>
+                <div class="bill-meta">
+                  <span class="material-icons-round">trending_down</span>
+                  0.8% decrease
+                </div>
+              </div>
+              <div class="bill-right">
+                <div class="bill-amount">₹29,050</div>
+                <div class="bill-date">
+                  <span class="material-icons-round">compare_arrows</span>
+                  vs Last Month
+                </div>
+              </div>
             </div>
           </div>
           <div class="expense-item">
-            <div class="expense-icon shopping">
-              <span class="material-icons-round">shopping_cart</span>
+            <div class="bill-icon">
+              <div class="bill-logo" style="background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);">
+                <span class="material-icons-round">directions_car</span>
+              </div>
             </div>
-            <div class="expense-details">
-              <div class="expense-name">Shopping</div>
-              <div class="expense-amount">$420.00</div>
-              <div class="expense-change increase">20%</div>
+            <div class="bill-info-wrapper">
+              <div class="bill-info">
+                <div class="bill-name">Transportation</div>
+                <div class="bill-meta">
+                  <span class="material-icons-round">trending_down</span>
+                  12% decrease
+                </div>
+              </div>
+              <div class="bill-right">
+                <div class="bill-amount">₹4,150</div>
+                <div class="bill-date">
+                  <span class="material-icons-round">compare_arrows</span>
+                  vs Last Month
+                </div>
+              </div>
             </div>
           </div>
           <div class="expense-item">
-            <div class="expense-icon others">
-              <span class="material-icons-round">more_horiz</span>
+            <div class="bill-icon">
+              <div class="bill-logo" style="background: linear-gradient(135deg, #9C27B0 0%, #7B1FA2 100%);">
+                <span class="material-icons-round">movie</span>
+              </div>
             </div>
-            <div class="expense-details">
-              <div class="expense-name">Others</div>
-              <div class="expense-amount">$650.00</div>
-              <div class="expense-change increase">23%</div>
+            <div class="bill-info-wrapper">
+              <div class="bill-info">
+                <div class="bill-name">Entertainment</div>
+                <div class="bill-meta">
+                  <span class="material-icons-round">trending_down</span>
+                  15% decrease
+                </div>
+              </div>
+              <div class="bill-right">
+                <div class="bill-amount">₹6,640</div>
+                <div class="bill-date">
+                  <span class="material-icons-round">compare_arrows</span>
+                  vs Last Month
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="expense-item">
+            <div class="bill-icon">
+              <div class="bill-logo" style="background: linear-gradient(135deg, #FF9800 0%, #F57C00 100%);">
+                <span class="material-icons-round">shopping_cart</span>
+              </div>
+            </div>
+            <div class="bill-info-wrapper">
+              <div class="bill-info">
+                <div class="bill-name">Shopping</div>
+                <div class="bill-meta">
+                  <span class="material-icons-round">trending_up</span>
+                  20% increase
+                </div>
+              </div>
+              <div class="bill-right">
+                <div class="bill-amount">₹34,860</div>
+                <div class="bill-date">
+                  <span class="material-icons-round">compare_arrows</span>
+                  vs Last Month
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="expense-item">
+            <div class="bill-icon">
+              <div class="bill-logo" style="background: linear-gradient(135deg, #607D8B 0%, #455A64 100%);">
+                <span class="material-icons-round">more_horiz</span>
+              </div>
+            </div>
+            <div class="bill-info-wrapper">
+              <div class="bill-info">
+                <div class="bill-name">Others</div>
+                <div class="bill-meta">
+                  <span class="material-icons-round">trending_up</span>
+                  23% increase
+                </div>
+              </div>
+              <div class="bill-right">
+                <div class="bill-amount">₹53,950</div>
+                <div class="bill-date">
+                  <span class="material-icons-round">compare_arrows</span>
+                  vs Last Month
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -30,19 +30,15 @@
         <span class="material-icons-round">flag</span>
         Goals
       </a>
+      <a href="/buddy" class="nav-item">
+        <span class="material-icons-round">smart_toy</span>
+        Pocket Buddy
+      </a>
       <a href="/profile" class="nav-item">
         <span class="material-icons-round">settings</span>
         Settings
       </a>
-      <a href="/buddy" class="nav-item">
-        <span class="material-icons-round">support_agent</span>
-        Pocket Buddy
-      </a>
     </nav>
-    <button class="nav-item logout-btn">
-      <span class="material-icons-round">logout</span>
-      Logout
-    </button>
     <div class="user-profile">
       <div class="avatar">
         <span class="material-icons-round">account_circle</span>
@@ -59,21 +55,29 @@
   </aside>
 
   <main id="main" class="goals-page page-enter" role="main">
-    <div class="page-header">
-      <div class="date-display">
-        <span class="material-icons-round">arrow_forward</span>
-        May 19, 2023
-      </div>
-      <div class="header-actions">
-        <div class="search-bar">
-          <span class="material-icons-round">search</span>
-          <input type="text" placeholder="Search here">
+    <header class="pg-header">
+      <div class="header-left">
+        <h1 class="page-title">Goals</h1>
+        <div class="breadcrumb">
+          <span class="material-icons-round">home</span>
+          <span class="separator">/</span>
+          <span class="current">Financial Goals</span>
         </div>
-        <button class="notification-btn">
-          <span class="material-icons-round">notifications</span>
-        </button>
       </div>
-    </div>
+      <div class="header-right">
+        <div class="search-container">
+          <span class="material-icons-round search-icon">search</span>
+          <input type="text" class="search-input" placeholder="Search goals...">
+        </div>
+        <button class="icon-btn notification-btn">
+          <span class="material-icons-round">notifications</span>
+          <span class="notification-badge">3</span>
+        </button>
+        <div class="user-avatar">
+          <span class="avatar-letter">S</span>
+        </div>
+      </div>
+    </header>
 
     <section class="goals-section">
       <div class="section-header">
@@ -129,7 +133,7 @@
               <div class="rule-header">
                 <strong>Guilty Pleasure Rule</strong>
               </div>
-              <p>Every time I buy coffee, transfer $1 to "Vacation".</p>
+              <p>Every time I buy coffee, transfer ₹83 to "Vacation".</p>
               <div class="rule-status">
                 <label class="checkbox-label">
                   <input type="checkbox" checked>
@@ -141,7 +145,7 @@
               <div class="rule-header">
                 <strong>Steps Streak</strong>
               </div>
-              <p>If I walk 10k steps, save $2 to "Emergency Fund".</p>
+              <p>If I walk 10k steps, save ₹166 to "Emergency Fund".</p>
               <div class="rule-status">
                 <label class="checkbox-label">
                   <input type="checkbox" checked>

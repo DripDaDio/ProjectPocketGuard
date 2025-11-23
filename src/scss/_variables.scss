@@ -1,16 +1,17 @@
+// Original Theme with Liquid Glass Cards
 $primary: rgba(230, 109, 87, 1); // darker coral primary
 $secondary: rgba(255, 224, 191, 1); // peach secondary
 $accent: rgba(255, 224, 191, 1); // keep peach as accent
 $accent2: rgba(230, 109, 87, 1); // darker coral as second accent
-$bg: #F8F8F8; // background-light
+$bg: #FFD97D; // Original yellow background
 $text: #333333; // text-primary
 $text2: #666666; // text-secondary
 $muted: #777; // utility muted
 $disabled: #CCCCCC; // text-disabled
-$card: #FFFFFF; // background-card
-$border: #E0E0E0; // border-color
+$card: rgba(255, 255, 255, 0.72); // Glass card
+$border: rgba(255, 255, 255, 0.3); // Glass border
 $error: #E53935; // keep red for errors
 $success: $secondary;
 $warning: $accent;
-$radius: 14px;
-$shadow: 0 8px 24px rgba(0,0,0,0.08);
+$radius: 20px; // Larger radius for glass
+$shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 0 0 0.5px rgba(255, 255, 255, 0.5) inset; // Glass shadow with inner glow

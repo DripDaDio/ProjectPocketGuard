@@ -2,23 +2,49 @@ document.addEventListener('DOMContentLoaded', () => {
   // Card switching functionality
   const cardSlides = document.querySelectorAll('.card-slide');
   const navDots = document.querySelectorAll('.nav-dot');
+  const prevBtn = document.querySelector('.prev-card');
+  const nextBtn = document.querySelector('.next-card');
+  let currentCardIndex = 0;
+  
+  function switchToCard(cardIndex) {
+    // Ensure index is within bounds
+    if (cardIndex < 0) cardIndex = cardSlides.length - 1;
+    if (cardIndex >= cardSlides.length) cardIndex = 0;
+    
+    currentCardIndex = cardIndex;
+    
+    // Update active dot
+    navDots.forEach(d => d.classList.remove('active'));
+    const activeDot = document.querySelector(`.nav-dot[data-card="${cardIndex}"]`);
+    if (activeDot) activeDot.classList.add('active');
+    
+    // Update active card
+    cardSlides.forEach(slide => slide.classList.remove('active'));
+    const activeCard = document.querySelector(`.card-slide[data-card="${cardIndex}"]`);
+    if (activeCard) {
+      activeCard.classList.add('active');
+    }
+  }
   
   navDots.forEach(dot => {
     dot.addEventListener('click', () => {
-      const cardIndex = dot.getAttribute('data-card');
-      
-      // Update active dot
-      navDots.forEach(d => d.classList.remove('active'));
-      dot.classList.add('active');
-      
-      // Update active card
-      cardSlides.forEach(slide => slide.classList.remove('active'));
-      const activeCard = document.querySelector(`.card-slide[data-card="${cardIndex}"]`);
-      if (activeCard) {
-        activeCard.classList.add('active');
-      }
+      const cardIndex = parseInt(dot.getAttribute('data-card'));
+      switchToCard(cardIndex);
     });
   });
+  
+  // Arrow button navigation
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      switchToCard(currentCardIndex - 1);
+    });
+  }
+  
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      switchToCard(currentCardIndex + 1);
+    });
+  }
 
   // Statistics data
   const weeklyData = {
@@ -82,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
             beginAtZero: true,
             ticks: {
               callback: function(value) {
-                return '$' + value + (period === 'monthly' ? 'k' : '');
+                return '₹' + value + (period === 'monthly' ? 'k' : '');
               }
             },
             grid: {
@@ -102,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
           tooltip: {
             callbacks: {
               label: function(context) {
-                return context.dataset.label + ': $' + context.parsed.y + (period === 'monthly' ? 'k' : '');
+                return context.dataset.label + ': ₹' + context.parsed.y + (period === 'monthly' ? 'k' : '');
               }
             }
           }

@@ -31,13 +31,13 @@
         <span class="material-icons-round">flag</span>
         Goals
       </a>
+      <a href="/buddy" class="nav-item">
+        <span class="material-icons-round">smart_toy</span>
+        Pocket Buddy
+      </a>
       <a href="/profile" class="nav-item active">
         <span class="material-icons-round">settings</span>
         Settings
-      </a>
-      <a href="/buddy" class="nav-item">
-        <span class="material-icons-round">support_agent</span>
-        Pocket Buddy
       </a>
     </nav>
     <button class="nav-item logout-btn">
@@ -82,6 +82,16 @@
         <div class="user-badges">
           <span class="chip"><span class="material-icons-round">calendar_today</span> Member</span>
           <span class="chip"><span class="material-icons-round">notifications</span> Alerts <%= user && user.notifyWeekly ? 'On' : 'Off' %></span>
+        </div>
+        <div class="theme-toggle-wrapper">
+          <div class="toggle-label">
+            <span class="material-icons-round">dark_mode</span>
+            <span>Dark Mode</span>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="darkModeToggle">
+            <span class="slider"></span>
+          </label>
         </div>
       </section>
 

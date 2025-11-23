@@ -1,4 +1,4 @@
-/* Balances Page Styles - Clean UI */
+/* Balances Page Styles - Liquid Glass */
 
 /* Body & Container */
 body.balances-body {
@@ -9,14 +9,14 @@ body.balances-body {
 }
 
 .app-container {
-  background: #FFD97D;
+  background: transparent;
   min-height: 100vh;
   display: flex;
 }
 
 /* Main Content Area */
 .balances-page {
-  background: #FFD97D;
+  background: transparent;
   padding: 32px;
   min-height: 100vh;
   flex: 1;
@@ -39,11 +39,14 @@ body.balances-body {
   gap: 10px;
   font-size: 14px;
   font-weight: 500;
-  color: white;
-  background: rgba(255, 255, 255, 0.15);
-  padding: 10px 18px;
-  border-radius: 12px;
-  backdrop-filter: blur(10px);
+  color: #333;
+  background: rgba(255, 255, 255, 0.72);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  padding: 12px 20px;
+  border-radius: 980px;
+  border: 0.5px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
 .date-display .material-icons-round {
@@ -54,11 +57,15 @@ body.balances-body {
   display: flex;
   align-items: center;
   gap: 12px;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.72);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
   padding: 12px 24px;
-  border-radius: 16px;
+  border-radius: 980px;
   flex: 1;
   max-width: 450px;
+  border: 0.5px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08), 0 0 0 0.5px rgba(255, 255, 255, 0.5) inset;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
@@ -150,38 +157,74 @@ body.balances-body {
 
 /* Account Card */
 .account-card {
-  background: white;
+  background: linear-gradient(135deg, rgba(255, 237, 179, 0.8) 0%, rgba(255, 245, 210, 0.7) 100%);
+  -webkit-backdrop-filter: saturate(180%) blur(40px);
+  backdrop-filter: saturate(180%) blur(40px);
   border-radius: 20px;
   padding: 28px;
-  border: none;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid rgba(255, 200, 100, 0.3);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   min-height: 320px;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  box-shadow: 
+    0 1px 1px rgba(255, 255, 255, 0.9) inset,
+    0 -1px 1px rgba(255, 200, 100, 0.2) inset,
+    0 8px 32px rgba(0, 0, 0, 0.12),
+    0 16px 48px rgba(0, 0, 0, 0.08),
+    0 0 60px rgba(255, 237, 179, 0.3);
   position: relative;
   overflow: hidden;
+  transform-style: preserve-3d;
 }
 
 .account-card::before {
   content: '';
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-  transform: scaleX(0);
-  transition: transform 0.4s ease;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
 }
 
 .account-card:hover::before {
-  transform: scaleX(1);
+  left: 100%;
+}
+
+.account-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.account-card:hover::after {
+  opacity: 1;
 }
 
 .account-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+  transform: translateY(-12px) scale(1.02) rotateX(2deg);
+  box-shadow: 
+    0 2px 2px rgba(255, 255, 255, 1) inset,
+    0 -2px 2px rgba(255, 200, 100, 0.3) inset,
+    0 24px 72px rgba(0, 0, 0, 0.18),
+    0 32px 64px rgba(0, 0, 0, 0.12),
+    0 0 80px rgba(255, 237, 179, 0.5);
+  background: linear-gradient(135deg, rgba(255, 247, 220, 0.9) 0%, rgba(255, 252, 235, 0.85) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-top: 2px solid rgba(255, 255, 255, 1);
+  border-bottom: 1px solid rgba(255, 220, 120, 0.4);
 }
 
 /* Account Header */
@@ -450,15 +493,16 @@ body.balances-body {
   cursor: pointer;
 }
 
-/* Modal Styles */
+/* Modal Styles - Liquid Glass */
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: saturate(180%) blur(30px);
+  backdrop-filter: saturate(180%) blur(30px);
   display: none;
   align-items: center;
   justify-content: center;
@@ -471,14 +515,17 @@ body.balances-body {
 }
 
 .modal-content {
-  background: white;
-  border-radius: 24px;
-  padding: 40px;
+  background: rgba(255, 255, 255, 0.85);
+  -webkit-backdrop-filter: saturate(180%) blur(30px);
+  backdrop-filter: saturate(180%) blur(30px);
+  border-radius: 28px;
+  padding: 44px;
   width: 90%;
   max-width: 600px;
   max-height: 90vh;
   overflow-y: auto;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2), 0 0 0 0.5px rgba(255, 255, 255, 0.6) inset;
+  border: 0.5px solid rgba(255, 255, 255, 0.4);
   animation: slideUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -513,13 +560,16 @@ body.balances-body {
 }
 
 .btn-close-modal {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  background: #f7fafc;
-  border: none;
+  background: rgba(0, 0, 0, 0.05);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -566,22 +616,25 @@ body.balances-body {
 
 .form-group input,
 .form-group select {
-  padding: 14px 18px;
-  border: 2px solid #e2e8f0;
+  padding: 14px 20px;
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   font-size: 15px;
-  transition: all 0.3s ease;
-  background: #f7fafc;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(255, 255, 255, 0.72);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
   font-weight: 500;
   color: #2d3748;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06), 0 0 0 0.5px rgba(255, 255, 255, 0.5) inset;
 }
 
 .form-group input:focus,
 .form-group select:focus {
   outline: none;
-  border-color: #667eea;
-  background: white;
-  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+  border-color: rgba(0, 122, 255, 0.5);
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 8px 24px rgba(0, 122, 255, 0.15), 0 0 0 3px rgba(0, 122, 255, 0.1);
   transform: translateY(-2px);
 }
 
@@ -720,23 +773,29 @@ body.balances-body {
   }
 }
 
-/* Smooth Scrollbar */
+/* Smooth Scrollbar - Liquid Glass */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.05);
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
+  backdrop-filter: saturate(180%) blur(10px);
   border-radius: 10px;
+  margin: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(0, 122, 255, 0.3);
   border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(0, 122, 255, 0.5);
+  background-clip: padding-box;
 }
 
 /* Account Details Modal */
@@ -751,11 +810,50 @@ body.balances-body {
 }
 
 .details-card {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.95) 0%, rgba(118, 75, 162, 0.95) 100%);
+  -webkit-backdrop-filter: saturate(180%) blur(40px);
+  backdrop-filter: saturate(180%) blur(40px);
   border-radius: 20px;
   padding: 28px;
   margin-bottom: 24px;
   color: white;
+  box-shadow: 
+    0 1px 1px rgba(255, 255, 255, 0.3) inset,
+    0 -1px 1px rgba(0, 0, 0, 0.2) inset,
+    0 8px 32px rgba(102, 126, 234, 0.3),
+    0 16px 48px rgba(0, 0, 0, 0.2),
+    0 0 60px rgba(118, 75, 162, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.details-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.details-card:hover::before {
+  left: 100%;
+}
+
+.details-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 
+    0 2px 2px rgba(255, 255, 255, 0.4) inset,
+    0 -2px 2px rgba(0, 0, 0, 0.3) inset,
+    0 24px 72px rgba(102, 126, 234, 0.4),
+    0 32px 64px rgba(0, 0, 0, 0.25),
+    0 0 80px rgba(118, 75, 162, 0.4);
 }
 
 .detail-section {
@@ -822,18 +920,48 @@ body.balances-body {
 }
 
 .stat-card {
-  background: #f8f9fa;
+  background: linear-gradient(135deg, rgba(255, 237, 179, 0.7) 0%, rgba(255, 245, 210, 0.6) 100%);
+  -webkit-backdrop-filter: saturate(180%) blur(30px);
+  backdrop-filter: saturate(180%) blur(30px);
   border-radius: 16px;
   padding: 20px;
   display: flex;
   align-items: center;
   gap: 12px;
-  transition: all 0.3s ease;
+  box-shadow: 
+    0 0.5px 1px rgba(255, 255, 255, 0.8) inset,
+    0 4px 16px rgba(0, 0, 0, 0.08),
+    0 0 30px rgba(255, 237, 179, 0.2);
+  border: 0.5px solid rgba(255, 255, 255, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.7);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.stat-card:hover::before {
+  left: 100%;
 }
 
 .stat-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 
+    0 1px 1px rgba(255, 255, 255, 1) inset,
+    0 8px 24px rgba(0, 0, 0, 0.12),
+    0 0 40px rgba(255, 237, 179, 0.3);
+  background: linear-gradient(135deg, rgba(255, 247, 220, 0.8) 0%, rgba(255, 252, 235, 0.7) 100%);
 }
 
 .stat-icon {

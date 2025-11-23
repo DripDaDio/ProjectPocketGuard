@@ -1,0 +1,519 @@
+/* Dark Mode Styles */
+
+body.dark-mode {
+  background: #1a1a2e !important;
+  color: #e0e0e0;
+}
+
+/* Background Colors */
+body.dark-mode .app-container,
+body.dark-mode .buddy-page,
+body.dark-mode .profile-page,
+body.dark-mode .transactions-page,
+body.dark-mode .bills-page,
+body.dark-mode .balances-page,
+body.dark-mode .dashboard,
+body.dark-mode .transactions-section,
+body.dark-mode .bills-section {
+  background: #1a1a2e !important;
+}
+
+/* Sidebar */
+body.dark-mode .sidebar {
+  background: rgba(30, 30, 46, 0.9) !important;
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  border-right: 0.5px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .nav-item {
+  color: #e0e0e0;
+}
+
+body.dark-mode .nav-item:hover {
+  background: rgba(102, 126, 234, 0.15);
+}
+
+body.dark-mode .nav-item.active {
+  background: rgba(102, 126, 234, 0.95);
+  color: white;
+}
+
+body.dark-mode .user-profile {
+  border-top: 0.5px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .user-info .name {
+  color: #e0e0e0;
+}
+
+body.dark-mode .user-info .role {
+  color: #a0a0a0;
+}
+
+/* Header */
+body.dark-mode .pg-header {
+  background: rgba(30, 30, 46, 0.9);
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05) inset, 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .page-title,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+  color: #e0e0e0 !important;
+}
+
+/* Cards - Dark Glass Effect */
+body.dark-mode .card {
+  background: linear-gradient(135deg, rgba(40, 40, 60, 0.8) 0%, rgba(50, 50, 70, 0.7) 100%) !important;
+  -webkit-backdrop-filter: saturate(180%) blur(40px);
+  backdrop-filter: saturate(180%) blur(40px);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-top: 1.5px solid rgba(255, 255, 255, 0.15) !important;
+  border-bottom: 1px solid rgba(100, 100, 150, 0.2) !important;
+  box-shadow: 
+    0 1px 1px rgba(255, 255, 255, 0.05) inset,
+    0 -1px 1px rgba(100, 100, 150, 0.1) inset,
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 16px 48px rgba(0, 0, 0, 0.3),
+    0 0 60px rgba(102, 126, 234, 0.1) !important;
+}
+
+body.dark-mode .card:hover {
+  background: linear-gradient(135deg, rgba(50, 50, 75, 0.85) 0%, rgba(60, 60, 85, 0.75) 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-top: 2px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 
+    0 2px 2px rgba(255, 255, 255, 0.08) inset,
+    0 -2px 2px rgba(100, 100, 150, 0.2) inset,
+    0 24px 72px rgba(0, 0, 0, 0.5),
+    0 32px 64px rgba(0, 0, 0, 0.4),
+    0 0 80px rgba(102, 126, 234, 0.2) !important;
+}
+
+/* Goal Cards */
+body.dark-mode .goal-card {
+  background: linear-gradient(135deg, rgba(40, 40, 60, 0.8) 0%, rgba(50, 50, 70, 0.7) 100%) !important;
+}
+
+body.dark-mode .goal-card:hover {
+  background: linear-gradient(135deg, rgba(50, 50, 75, 0.85) 0%, rgba(60, 60, 85, 0.75) 100%) !important;
+}
+
+/* Savings Card - Purple Tint */
+body.dark-mode .savings-card {
+  background: linear-gradient(135deg, rgba(80, 60, 100, 0.85) 0%, rgba(70, 50, 90, 0.75) 100%) !important;
+}
+
+body.dark-mode .savings-card:hover {
+  background: linear-gradient(135deg, rgba(90, 70, 110, 0.9) 0%, rgba(80, 60, 100, 0.8) 100%) !important;
+}
+
+/* Investing Card - Blue Tint */
+body.dark-mode .investing-card {
+  background: linear-gradient(135deg, rgba(40, 60, 100, 0.85) 0%, rgba(35, 55, 90, 0.75) 100%) !important;
+}
+
+body.dark-mode .investing-card:hover {
+  background: linear-gradient(135deg, rgba(50, 70, 110, 0.9) 0%, rgba(45, 65, 100, 0.8) 100%) !important;
+}
+
+/* Account Cards */
+body.dark-mode .account-card {
+  background: linear-gradient(135deg, rgba(40, 40, 60, 0.8) 0%, rgba(50, 50, 70, 0.7) 100%) !important;
+}
+
+body.dark-mode .account-card:hover {
+  background: linear-gradient(135deg, rgba(50, 50, 75, 0.85) 0%, rgba(60, 60, 85, 0.75) 100%) !important;
+}
+
+/* Details Card */
+body.dark-mode .details-card {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%) !important;
+}
+
+/* Stat Cards */
+body.dark-mode .stat-card {
+  background: linear-gradient(135deg, rgba(40, 40, 60, 0.7) 0%, rgba(50, 50, 70, 0.6) 100%) !important;
+  border: 0.5px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .stat-card:hover {
+  background: linear-gradient(135deg, rgba(50, 50, 75, 0.8) 0%, rgba(60, 60, 85, 0.7) 100%) !important;
+}
+
+/* Table Containers */
+body.dark-mode .transactions-table-container,
+body.dark-mode .bills-table-container {
+  background: linear-gradient(135deg, rgba(40, 40, 60, 0.8) 0%, rgba(50, 50, 70, 0.7) 100%) !important;
+}
+
+body.dark-mode .transactions-table-container:hover,
+body.dark-mode .bills-table-container:hover {
+  background: linear-gradient(135deg, rgba(50, 50, 75, 0.85) 0%, rgba(60, 60, 85, 0.75) 100%) !important;
+}
+
+/* Tables */
+body.dark-mode .transactions-table thead,
+body.dark-mode .bills-table thead {
+  background: rgba(30, 30, 46, 0.6) !important;
+}
+
+body.dark-mode .transactions-table th,
+body.dark-mode .bills-table th {
+  color: #a0a0ff !important;
+}
+
+body.dark-mode .transaction-row,
+body.dark-mode .bill-row {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .transaction-row:hover,
+body.dark-mode .bill-row:hover {
+  background: rgba(60, 60, 90, 0.3) !important;
+}
+
+body.dark-mode .transactions-table td,
+body.dark-mode .bills-table td {
+  color: #d0d0d0;
+}
+
+/* Card Navigation Arrows */
+body.dark-mode .nav-arrow {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.4) 0%, rgba(90, 110, 220, 0.3) 100%);
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  border-bottom-color: rgba(102, 126, 234, 0.3);
+  box-shadow: 
+    inset 0 1px 2px rgba(255, 255, 255, 0.1),
+    inset 0 -1px 2px rgba(102, 126, 234, 0.2),
+    0 4px 12px rgba(0, 0, 0, 0.3),
+    0 2px 6px rgba(102, 126, 234, 0.2);
+}
+
+body.dark-mode .nav-arrow .material-icons-round {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+body.dark-mode .nav-arrow:hover {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.6) 0%, rgba(90, 110, 220, 0.5) 100%);
+  box-shadow: 
+    inset 0 1px 3px rgba(255, 255, 255, 0.15),
+    inset 0 -1px 3px rgba(102, 126, 234, 0.3),
+    0 6px 16px rgba(0, 0, 0, 0.4),
+    0 3px 8px rgba(102, 126, 234, 0.3);
+}
+
+body.dark-mode .nav-arrow:hover .material-icons-round {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+body.dark-mode .nav-dot {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+body.dark-mode .nav-dot:hover {
+  background: rgba(102, 126, 234, 0.6);
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.4);
+}
+
+body.dark-mode .nav-dot.active {
+  background: rgba(102, 126, 234, 0.9);
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.5);
+}
+
+/* Bill and Transaction Items */
+body.dark-mode .bill-item,
+body.dark-mode .transaction-item {
+  background: rgba(40, 40, 60, 0.4);
+  border: 0.5px solid rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode .bill-item:hover,
+body.dark-mode .transaction-item:hover {
+  background: linear-gradient(135deg, rgba(50, 50, 75, 0.6) 0%, rgba(60, 60, 85, 0.5) 100%) !important;
+  border: 0.5px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Rules */
+body.dark-mode .rule {
+  background: linear-gradient(135deg, rgba(50, 50, 70, 0.7) 0%, rgba(60, 60, 80, 0.6) 100%) !important;
+  border: 0.5px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .rule:hover {
+  background: linear-gradient(135deg, rgba(60, 60, 85, 0.8) 0%, rgba(70, 70, 95, 0.7) 100%) !important;
+}
+
+/* Chat Section */
+body.dark-mode .chat-section.card {
+  background: linear-gradient(135deg, rgba(40, 40, 60, 0.8) 0%, rgba(50, 50, 70, 0.7) 100%) !important;
+}
+
+body.dark-mode .buddy .learning .card {
+  background: linear-gradient(135deg, rgba(40, 40, 60, 0.7) 0%, rgba(50, 50, 70, 0.6) 100%) !important;
+}
+
+body.dark-mode .buddy .learning .card:hover {
+  background: linear-gradient(135deg, rgba(50, 50, 75, 0.8) 0%, rgba(60, 60, 85, 0.7) 100%) !important;
+}
+
+/* Text Colors */
+body.dark-mode .bill-info-wrapper h4,
+body.dark-mode .bill-name,
+body.dark-mode .tx-merchant,
+body.dark-mode .account-type,
+body.dark-mode .goal-header h3,
+body.dark-mode .user-details h3,
+body.dark-mode .account-name strong {
+  color: #e0e0e0 !important;
+}
+
+body.dark-mode .bill-info-wrapper p,
+body.dark-mode .bill-due,
+body.dark-mode .tx-category,
+body.dark-mode .account-name,
+body.dark-mode .user-details .email {
+  color: #a0a0a0 !important;
+}
+
+/* Search Bar */
+body.dark-mode .search-bar {
+  background: rgba(40, 40, 60, 0.8);
+  border: 0.5px solid rgba(255, 255, 255, 0.15);
+}
+
+body.dark-mode .search-bar input {
+  color: #e0e0e0;
+}
+
+body.dark-mode .search-bar input::placeholder {
+  color: #808080;
+}
+
+/* Buttons */
+body.dark-mode .btn-secondary {
+  background: rgba(60, 60, 80, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e0e0e0;
+}
+
+body.dark-mode .btn-secondary:hover {
+  background: rgba(70, 70, 90, 0.9);
+  border-color: #667eea;
+  color: #a0a0ff;
+}
+
+body.dark-mode .notification-btn {
+  background: rgba(40, 40, 60, 0.8);
+  border: 0.5px solid rgba(255, 255, 255, 0.15);
+}
+
+body.dark-mode .notification-btn:hover {
+  background: rgba(60, 60, 80, 0.9);
+}
+
+/* Badges */
+body.dark-mode .badge {
+  background: rgba(60, 60, 80, 0.8);
+  border: 0.5px solid rgba(255, 255, 255, 0.15);
+  color: #e0e0e0;
+}
+
+body.dark-mode .status-badge {
+  background: rgba(52, 199, 89, 0.2);
+  border-color: rgba(52, 199, 89, 0.4);
+  color: #5FDB8C;
+}
+
+body.dark-mode .chip {
+  background: rgba(60, 60, 80, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #d0d0d0;
+}
+
+/* Theme Toggle */
+body.dark-mode .theme-toggle-wrapper {
+  background: rgba(102, 126, 234, 0.15);
+  border: 1px solid rgba(102, 126, 234, 0.3);
+}
+
+body.dark-mode .theme-toggle-wrapper:hover {
+  background: rgba(102, 126, 234, 0.2);
+  border-color: rgba(102, 126, 234, 0.4);
+}
+
+body.dark-mode .theme-toggle-wrapper .toggle-label {
+  color: #e0e0e0;
+}
+
+/* Stats Summary */
+body.dark-mode .stats-summary {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode .summary-item {
+  background: rgba(40, 40, 60, 0.5);
+  border: 0.5px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .summary-item:hover {
+  background: rgba(50, 50, 70, 0.6);
+}
+
+body.dark-mode .summary-label {
+  color: #a0a0a0;
+}
+
+body.dark-mode .summary-value {
+  color: #e0e0e0;
+}
+
+/* Account Items */
+body.dark-mode .account-item {
+  background: rgba(40, 40, 60, 0.6);
+  border: 2px solid rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .account-item:hover {
+  background: rgba(50, 50, 70, 0.7);
+  border-color: #667eea;
+}
+
+/* Toggle Items */
+body.dark-mode .toggle-item {
+  background: rgba(40, 40, 60, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode .toggle-item:hover {
+  background: rgba(50, 50, 70, 0.7);
+}
+
+body.dark-mode .toggle-label {
+  color: #e0e0e0;
+}
+
+/* Switch Toggle */
+body.dark-mode .switch .slider {
+  background-color: rgba(60, 60, 80, 0.8);
+}
+
+body.dark-mode .switch input:checked + .slider {
+  background-color: #667eea;
+}
+
+/* Progress Bars */
+body.dark-mode .goal-progress-bar {
+  background: rgba(60, 60, 80, 0.5);
+}
+
+body.dark-mode .goal-progress-fill {
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Card Info */
+body.dark-mode .card-info {
+  background: rgba(45, 62, 104, 0.95);
+}
+
+/* Date Display */
+body.dark-mode .date-display {
+  background: rgba(40, 40, 60, 0.8);
+  border: 0.5px solid rgba(255, 255, 255, 0.15);
+  color: #e0e0e0;
+}
+
+/* Empty States */
+body.dark-mode .empty-state {
+  color: #a0a0a0;
+}
+
+body.dark-mode .empty-icon {
+  color: #667eea;
+}
+
+/* Bottom Navigation */
+body.dark-mode .pg-bottom-nav {
+  background: rgba(30, 30, 46, 0.9);
+  border-top: 0.5px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.3), 0 -1px 0 rgba(255, 255, 255, 0.05) inset;
+}
+
+body.dark-mode .pg-bottom-nav .nav-item {
+  color: #a0a0a0;
+}
+
+body.dark-mode .pg-bottom-nav .nav-item.active {
+  color: #667eea;
+}
+
+/* Form Elements */
+body.dark-mode input[type="text"],
+body.dark-mode input[type="email"],
+body.dark-mode input[type="password"],
+body.dark-mode select,
+body.dark-mode textarea {
+  background: rgba(40, 40, 60, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e0e0e0;
+}
+
+body.dark-mode input::placeholder {
+  color: #808080;
+}
+
+/* Alerts */
+body.dark-mode .alert-error {
+  background: rgba(255, 59, 48, 0.2);
+  color: #FF6B6B;
+  border-color: rgba(255, 59, 48, 0.3);
+}
+
+body.dark-mode .alert-success {
+  background: rgba(52, 199, 89, 0.2);
+  color: #5FDB8C;
+  border-color: rgba(52, 199, 89, 0.3);
+}
+
+/* Amounts */
+body.dark-mode .balance-amount,
+body.dark-mode .goal-amount,
+body.dark-mode .bill-amount,
+body.dark-mode .tx-amount {
+  color: #e0e0e0 !important;
+}
+
+body.dark-mode .amount-positive {
+  color: #5FDB8C !important;
+}
+
+body.dark-mode .amount-negative {
+  color: #FF6B6B !important;
+}
+
+/* Material Icons */
+body.dark-mode .material-icons-round {
+  color: inherit;
+}
+
+/* Scrollbars */
+body.dark-mode ::-webkit-scrollbar {
+  width: 10px;
+}
+
+body.dark-mode ::-webkit-scrollbar-track {
+  background: rgba(30, 30, 46, 0.5);
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb {
+  background: rgba(102, 126, 234, 0.5);
+  border-radius: 5px;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb:hover {
+  background: rgba(102, 126, 234, 0.7);
+}

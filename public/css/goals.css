@@ -1,24 +1,179 @@
-/* Goals Page Styling */
+/* Goals Page Styling - Liquid Glass */
 
 body.goals-body {
   margin: 0;
   padding: 0;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   background: #FFD97D !important;
   min-height: 100vh;
 }
 
 .goals-page {
   flex: 1;
-  padding: 24px;
+  padding: 0;
   overflow-y: auto;
-  background: #FFD97D;
+  background: transparent;
+}
+
+/* Page Header - Consistent with other pages */
+.goals-page .pg-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 32px;
+  background: linear-gradient(135deg, rgba(255, 237, 179, 0.6) 0%, rgba(255, 245, 210, 0.5) 100%);
+  -webkit-backdrop-filter: saturate(180%) blur(40px);
+  backdrop-filter: saturate(180%) blur(40px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset, 0 0 30px rgba(255, 237, 179, 0.2);
+  margin-bottom: 32px;
+}
+
+.goals-page .header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.goals-page .page-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.goals-page .breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #666;
+}
+
+.goals-page .breadcrumb .material-icons-round {
+  font-size: 16px;
+}
+
+.goals-page .breadcrumb .separator {
+  color: #999;
+}
+
+.goals-page .breadcrumb .current {
+  color: #333;
+  font-weight: 500;
+}
+
+.goals-page .header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.goals-page .search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.goals-page .search-icon {
+  position: absolute;
+  left: 12px;
+  color: #999;
+  font-size: 20px;
+  pointer-events: none;
+}
+
+.goals-page .search-input {
+  padding: 10px 16px 10px 44px;
+  border-radius: 980px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.7);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  font-size: 14px;
+  width: 280px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.goals-page .search-input:focus {
+  outline: none;
+  border-color: rgba(0, 122, 255, 0.5);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 16px rgba(0, 122, 255, 0.15);
+}
+
+.goals-page .icon-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.7);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.goals-page .icon-btn:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.goals-page .icon-btn .material-icons-round {
+  font-size: 20px;
+  color: #333;
+}
+
+.goals-page .notification-badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background: #FF6B6B;
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 10px;
+  border: 2px solid #FFD97D;
+}
+
+.goals-page .user-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4A90E2 0%, #67B5FF 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.goals-page .user-avatar:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(74, 144, 226, 0.3);
+}
+
+.goals-page .avatar-letter {
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
 }
 
 /* Section Header */
 .goals-section {
   max-width: 1400px;
   margin: 0 auto;
+  padding: 0 32px 32px 32px;
 }
 
 .section-header {
@@ -29,7 +184,7 @@ body.goals-body {
 }
 
 .section-header h1 {
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 700;
   margin: 0;
   color: #1a1a1a;
@@ -53,26 +208,34 @@ body.goals-body {
 }
 
 .btn-outline {
-  background: transparent;
-  border: 2px solid #333;
-  color: #333;
+  background: rgba(255, 255, 255, 0.7);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  border: 0.5px solid rgba(0, 122, 255, 0.3);
+  border-radius: 980px;
+  color: rgba(0, 122, 255, 0.95);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
 }
 
 .btn-outline:hover {
-  background: #333;
-  color: #fff;
+  background: rgba(0, 122, 255, 0.1);
+  border-color: rgba(0, 122, 255, 0.5);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
 .btn-create {
-  background: #FF6B6B;
-  border: none;
+  background: rgba(0, 122, 255, 0.95);
+  border: 0.5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 980px;
   color: white;
+  box-shadow: 0 4px 16px rgba(0, 122, 255, 0.3), 0 0 0 0.5px rgba(255, 255, 255, 0.3) inset;
 }
 
 .btn-create:hover {
-  background: #ff5252;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+  background: rgba(0, 122, 255, 1);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(0, 122, 255, 0.4), 0 0 0 0.5px rgba(255, 255, 255, 0.4) inset;
 }
 
 /* Goals Container */
@@ -84,16 +247,72 @@ body.goals-body {
 
 /* Goal Cards */
 .goal-card {
-  background: white;
-  border-radius: 16px;
-  padding: 28px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
+  background: linear-gradient(135deg, rgba(255, 237, 179, 0.8) 0%, rgba(255, 245, 210, 0.7) 100%);
+  -webkit-backdrop-filter: saturate(180%) blur(40px);
+  backdrop-filter: saturate(180%) blur(40px);
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 
+    0 1px 1px rgba(255, 255, 255, 0.9) inset,
+    0 -1px 1px rgba(255, 200, 100, 0.2) inset,
+    0 8px 32px rgba(0, 0, 0, 0.12),
+    0 16px 48px rgba(0, 0, 0, 0.08),
+    0 0 60px rgba(255, 237, 179, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid rgba(255, 200, 100, 0.3);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+}
+
+.goal-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.4) 50%, transparent 70%);
+  animation: shimmerGoal 4s infinite;
+  pointer-events: none;
+}
+
+@keyframes shimmerGoal {
+  0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+.goal-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.goal-card:hover::after {
+  opacity: 1;
 }
 
 .goal-card:hover {
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-  transform: translateY(-4px);
+  transform: translateY(-12px) scale(1.02) rotateX(2deg);
+  box-shadow: 
+    0 2px 2px rgba(255, 255, 255, 1) inset,
+    0 -2px 2px rgba(255, 200, 100, 0.3) inset,
+    0 24px 72px rgba(0, 0, 0, 0.18),
+    0 32px 64px rgba(0, 0, 0, 0.12),
+    0 0 80px rgba(255, 237, 179, 0.5);
+  background: linear-gradient(135deg, rgba(255, 247, 220, 0.9) 0%, rgba(255, 252, 235, 0.85) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-top: 2px solid rgba(255, 255, 255, 1);
+  border-bottom: 1px solid rgba(255, 220, 120, 0.4);
 }
 
 .goal-header {
@@ -110,22 +329,27 @@ body.goals-body {
 /* Progress Bar */
 .goal-progress-bar {
   position: relative;
-  height: 32px;
-  background: #f0f0f0;
-  border-radius: 16px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
+  backdrop-filter: saturate(180%) blur(10px);
+  border-radius: 980px;
   overflow: hidden;
   margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08) inset;
 }
 
 .progress-fill {
   height: 100%;
   background: linear-gradient(90deg, #4A90E2 0%, #67B5FF 100%);
-  border-radius: 16px;
-  transition: width 0.6s ease;
+  border-radius: 980px;
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   align-items: center;
   justify-content: flex-end;
   padding-right: 12px;
+  box-shadow: 0 2px 12px rgba(74, 144, 226, 0.4);
 }
 
 .progress-label {
@@ -148,26 +372,66 @@ body.goals-body {
 
 .btn-goal-action {
   flex: 1;
-  padding: 12px 16px;
-  border: 2px solid #4A90E2;
-  background: transparent;
+  padding: 12px 20px;
+  border: 1px solid rgba(74, 144, 226, 0.3);
+  background: rgba(255, 255, 255, 0.6);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
   color: #4A90E2;
-  border-radius: 8px;
+  border-radius: 980px;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
 .btn-goal-action:hover {
   background: #4A90E2;
   color: white;
-  transform: translateY(-2px);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 24px rgba(74, 144, 226, 0.3);
+  border: 1px solid #4A90E2;
 }
 
 /* Savings Card */
 .savings-card {
-  background: linear-gradient(135deg, #FFE5B4 0%, #FFDAB9 100%);
+  background: linear-gradient(135deg, rgba(255, 229, 180, 0.85) 0%, rgba(255, 240, 200, 0.75) 100%);
+  -webkit-backdrop-filter: saturate(180%) blur(40px);
+  backdrop-filter: saturate(180%) blur(40px);
+  box-shadow: 
+    0 1px 1px rgba(255, 255, 255, 0.9) inset,
+    0 -1px 1px rgba(255, 200, 100, 0.2) inset,
+    0 8px 32px rgba(0, 0, 0, 0.12),
+    0 0 60px rgba(255, 229, 180, 0.3);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid rgba(255, 200, 100, 0.3);
+}
+
+.savings-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.15) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.savings-card:hover::after {
+  opacity: 1;
+}
+
+.savings-card:hover {
+  background: linear-gradient(135deg, rgba(255, 235, 200, 0.95) 0%, rgba(255, 245, 220, 0.85) 100%);
+  box-shadow: 
+    0 2px 2px rgba(255, 255, 255, 1) inset,
+    0 -2px 2px rgba(255, 200, 100, 0.3) inset,
+    0 24px 72px rgba(0, 0, 0, 0.15),
+    0 0 80px rgba(255, 229, 180, 0.5);
 }
 
 .savings-rules {
@@ -175,10 +439,46 @@ body.goals-body {
 }
 
 .rule {
-  background: white;
-  border-radius: 12px;
-  padding: 16px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.75) 0%, rgba(255, 250, 240, 0.65) 100%);
+  -webkit-backdrop-filter: saturate(180%) blur(30px);
+  backdrop-filter: saturate(180%) blur(30px);
+  border-radius: 16px;
+  padding: 20px;
   margin-bottom: 12px;
+  border: 0.5px solid rgba(255, 255, 255, 0.6);
+  border-top: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 
+    0 0.5px 1px rgba(255, 255, 255, 0.8) inset,
+    0 4px 16px rgba(0, 0, 0, 0.06),
+    0 0 30px rgba(255, 237, 179, 0.2);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.rule::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.rule:hover::before {
+  left: 100%;
+}
+
+.rule:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 252, 245, 0.8) 100%);
+  transform: translateX(8px) scale(1.01);
+  box-shadow: 
+    0 1px 1px rgba(255, 255, 255, 1) inset,
+    0 8px 24px rgba(0, 0, 0, 0.1),
+    0 0 40px rgba(255, 237, 179, 0.3);
 }
 
 .rule-header {
@@ -221,21 +521,23 @@ body.goals-body {
 
 .btn-create-sprint {
   width: 100%;
-  padding: 12px;
-  background: #FF6B6B;
+  padding: 14px;
+  background: linear-gradient(135deg, #FF6B6B 0%, #FF5252 100%);
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 980px;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   margin-top: 12px;
+  box-shadow: 0 4px 16px rgba(255, 107, 107, 0.3);
 }
 
 .btn-create-sprint:hover {
-  background: #ff5252;
-  transform: translateY(-2px);
+  background: linear-gradient(135deg, #ff5252 0%, #ff3838 100%);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(255, 107, 107, 0.4);
 }
 
 .ai-badge {
@@ -251,7 +553,42 @@ body.goals-body {
 
 /* Investing Card */
 .investing-card {
-  background: linear-gradient(135deg, #E8F4F8 0%, #D6EAF8 100%);
+  background: linear-gradient(135deg, rgba(232, 244, 248, 0.85) 0%, rgba(220, 240, 250, 0.75) 100%);
+  -webkit-backdrop-filter: saturate(180%) blur(40px);
+  backdrop-filter: saturate(180%) blur(40px);
+  box-shadow: 
+    0 1px 1px rgba(255, 255, 255, 0.9) inset,
+    0 -1px 1px rgba(180, 210, 230, 0.2) inset,
+    0 8px 32px rgba(0, 0, 0, 0.12),
+    0 0 60px rgba(232, 244, 248, 0.3);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid rgba(180, 210, 230, 0.3);
+}
+
+.investing-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.15) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.investing-card:hover::after {
+  opacity: 1;
+}
+
+.investing-card:hover {
+  background: linear-gradient(135deg, rgba(214, 234, 248, 0.95) 0%, rgba(230, 245, 255, 0.85) 100%);
+  box-shadow: 
+    0 2px 2px rgba(255, 255, 255, 1) inset,
+    0 -2px 2px rgba(180, 210, 230, 0.3) inset,
+    0 24px 72px rgba(0, 0, 0, 0.15),
+    0 0 80px rgba(232, 244, 248, 0.5);
 }
 
 .investing-info {

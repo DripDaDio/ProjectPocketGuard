@@ -1,4 +1,4 @@
-/* Profile/Settings Page - Sidebar Layout with Yellow & Blue/Orange Theme */
+/* Profile/Settings Page - Liquid Glass Theme */
 
 /* Body & Container */
 body.profile-body {
@@ -9,14 +9,14 @@ body.profile-body {
 }
 
 .app-container {
-  background: #FFD97D;
+  background: transparent;
   min-height: 100vh;
   display: flex;
 }
 
 /* Main Content Area */
 .profile-page {
-  background: #FFD97D;
+  background: transparent;
   padding: 32px;
   min-height: 100vh;
   flex: 1;
@@ -51,13 +51,16 @@ body.profile-body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 20px;
-  border-radius: 20px;
+  padding: 12px 24px;
+  border-radius: 980px;
   font-size: 14px;
   font-weight: 600;
-  background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
+  background: rgba(0, 122, 255, 0.95);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
   color: white;
-  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+  border: 0.5px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 16px rgba(0, 122, 255, 0.3), 0 0 0 0.5px rgba(255, 255, 255, 0.3) inset;
 }
 
 .status-badge .material-icons-round {
@@ -110,19 +113,54 @@ body.profile-body {
 
 /* Card Styling */
 .profile-page .card {
-  background: white;
+  background: linear-gradient(135deg, rgba(255, 237, 179, 0.8) 0%, rgba(255, 245, 210, 0.7) 100%);
+  -webkit-backdrop-filter: saturate(180%) blur(40px);
+  backdrop-filter: saturate(180%) blur(40px);
   border-radius: 20px;
   padding: 28px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
+  box-shadow: 
+    0 1px 1px rgba(255, 255, 255, 0.9) inset,
+    0 -1px 1px rgba(255, 200, 100, 0.2) inset,
+    0 8px 32px rgba(0, 0, 0, 0.12),
+    0 16px 48px rgba(0, 0, 0, 0.08),
+    0 0 60px rgba(255, 237, 179, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid rgba(255, 200, 100, 0.3);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   animation: fadeInUp 0.5s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-page .card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.profile-page .card:hover::before {
+  left: 100%;
 }
 
 .profile-page .card:hover {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-  transform: translateY(-2px);
-  border-color: #4A90E2;
+  box-shadow: 
+    0 2px 2px rgba(255, 255, 255, 1) inset,
+    0 -2px 2px rgba(255, 200, 100, 0.3) inset,
+    0 24px 72px rgba(0, 0, 0, 0.18),
+    0 32px 64px rgba(0, 0, 0, 0.12),
+    0 0 80px rgba(255, 237, 179, 0.5);
+  transform: translateY(-12px) scale(1.02) rotateX(2deg);
+  background: linear-gradient(135deg, rgba(255, 247, 220, 0.9) 0%, rgba(255, 252, 235, 0.85) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-top: 2px solid rgba(255, 255, 255, 1);
+  border-bottom: 1px solid rgba(255, 220, 120, 0.4);
 }
 
 @keyframes fadeInUp {
@@ -175,6 +213,41 @@ body.profile-body {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+/* Theme Toggle in Profile Card */
+.theme-toggle-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-radius: 12px;
+  background: rgba(102, 126, 234, 0.05);
+  border: 1px solid rgba(102, 126, 234, 0.15);
+  margin-top: 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-toggle-wrapper:hover {
+  background: rgba(102, 126, 234, 0.08);
+  border-color: rgba(102, 126, 234, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+}
+
+.theme-toggle-wrapper .toggle-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #4a5568;
+}
+
+.theme-toggle-wrapper .toggle-label .material-icons-round {
+  font-size: 20px;
+  color: #667eea;
 }
 
 /* Chip/Tags */
